@@ -10,25 +10,25 @@ import SwiftUI
 struct LoginView: View {
     
     @EnvironmentObject var router: Router
-    
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+
     @State var email: String = ""
     @State var password: String = ""
     @State var alertMsg = ""
     @State var showAlert = false
     @State var mailLineColor = Colors.green500
     @State var pwLineColor = Colors.green500
-    
-//    var alert: Alert {
-//        Alert(title: Text(""), message: Text(alertMsg), dismissButton: .default(Text("OK")))
-//    }
-    
+
     var body: some View {
         ZStack {
             
             Image("img_background_home")
                 .resizable()
                 .edgesIgnoringSafeArea(.all)
-                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                .frame(
+                    width: UIScreen.main.bounds.width,
+                    height: UIScreen.main.bounds.height
+                )
 
             VStack {
                 VStack {
