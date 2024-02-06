@@ -2,16 +2,27 @@
 //  DemoApp.swift
 //  Demo
 //
-//  Created by 高杉君 on 2024/2/6.
+//  Created by --- on 2024/2/6.
 //
 
 import SwiftUI
 
 @main
-struct DemoApp: App {
+struct RoutingApp: App {
+    @ObservedObject var router = Router()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack(path: $router.navPath) {
+                LoginView()
+                .navigationDestination(for: PageName.self) { name in
+                    switch name {
+                    case .loginPage: LoginView()
+                    case .homePage: HomeView()
+                    }
+                }
+            }
+            .environmentObject(router)
         }
     }
 }
