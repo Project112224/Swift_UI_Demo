@@ -11,6 +11,8 @@ final class Router: ObservableObject {
     
     @Published var navPath = NavigationPath()
     
+    @State var hiddenHeader = false
+    
     func navigate(to name: PageName) {
         navPath.append(name)
     }

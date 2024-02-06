@@ -9,9 +9,11 @@ import SwiftUI
 
 struct Seperator: View {
     
+    var color: Color
+    
     var body: some View {
         VStack {
-            Divider().background(Colors.green500)
+            Divider().background(color)
         }.padding()
             .frame(height: 1, alignment: .center)
     }

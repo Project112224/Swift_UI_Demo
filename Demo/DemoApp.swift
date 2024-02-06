@@ -21,6 +21,7 @@ struct RoutingApp: App {
                     case .homePage: HomeView()
                     }
                 }
+                .navigationBarHidden(router.hiddenHeader)
             }
             .environmentObject(router)
         }

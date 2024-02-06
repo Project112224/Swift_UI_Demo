@@ -14,14 +14,9 @@ struct LoginView: View {
     @State var email: String = ""
     @State var password: String = ""
     @State var alertMsg = ""
-    
-    @State private var showForgotPassword = false
-    @State private var showSignup = false
     @State var showAlert = false
-    @State var showDetails = false
-    
-    @State var loginSelection: Int? = nil
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @State var mailLineColor = Colors.green500
+    @State var pwLineColor = Colors.green500
     
     var alert: Alert {
         Alert(title: Text(""), message: Text(alertMsg), dismissButton: .default(Text("OK")))
@@ -44,6 +39,8 @@ struct LoginView: View {
                     VStack {
                         HStack {
                             Image("ic_email")
+                                .renderingMode(.template)
+                                .foregroundColor(Colors.green500)
                                 .padding(.leading, (UIScreen.main.bounds.width * 20) / 414)
                             
                             TextField("Email", text: $email)
@@ -55,12 +52,14 @@ struct LoginView: View {
                                 .keyboardType(.emailAddress)
                                 .autocapitalization(UITextAutocapitalizationType.none)
                         }
-                        Seperator()
+                        Seperator(color: mailLineColor)
                     }
                     Spacer(minLength: (UIScreen.main.bounds.width * 15) / 414)
                     VStack {
                         HStack {
                             Image("ic_password")
+                                .renderingMode(.template)
+                                .foregroundColor(Colors.green500)
                                 .padding(.leading, (UIScreen.main.bounds.width * 20) / 414)
                             
                             SecureField("Password", text: $password)
@@ -70,20 +69,19 @@ struct LoginView: View {
                                 .font(.system(size: (UIScreen.main.bounds.width * 15) / 414, weight: .regular, design: .default))
                                 .imageScale(.small)
                         }
-                        Seperator()
+                        Seperator(color: pwLineColor)
                         
                     }
                     Spacer(minLength: (UIScreen.main.bounds.width * 15) / 414)
                     VStack {
+                        Spacer().frame(height: 20)
                         Button(action: {
-//                            if  self.isValidInputs() {
-//                                UserDefaults.standard.set(true, forKey: "Loggedin")
-//                                UserDefaults.standard.synchronize()
-//                            }
-                            router.navigate(to: .homePage)
+                            if  self.isValidInputs() {
+                                router.navigate(to: .homePage)
+                            }
                         }) {
                             ButtonWithBackground(btnText: "LOGIN")
-                        }.background(.red)
+                        }
                         
                         Spacer(minLength: (UIScreen.main.bounds.width * 15) / 414)
                     }
@@ -94,17 +92,28 @@ struct LoginView: View {
     }
     
     fileprivate func isValidInputs() -> Bool {
+        var isEmpty = false
         
         if self.email == "" {
-            self.alertMsg = "Email can't be blank."
-            self.showAlert.toggle()
+            self.mailLineColor = Color.red
+            isEmpty = isEmpty || true
+        } else {
+            self.mailLineColor = Colors.green500
+        }
+        
+        if self.password == "" {
+            self.pwLineColor = Color.red
+            isEmpty = isEmpty || true
+        } else {
+            self.pwLineColor = Colors.green500
+        }
+        
+        if (isEmpty) {
             return false
-        } else if !self.email.isValidEmail {
+        }
+        
+        if !self.email.isValidEmail {
             self.alertMsg = "Email is not valid."
-            self.showAlert.toggle()
-            return false
-        } else if self.password == "" {
-            self.alertMsg = "Password can't be blank."
             self.showAlert.toggle()
             return false
         } else if !(self.password.isValidPassword) {
