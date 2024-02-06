@@ -28,75 +28,69 @@ struct LoginView: View {
     }
     
     var body: some View {
-        
-        VStack {
+        ZStack {
             
+            Image("img_background_home")
+                .resizable()
+                .edgesIgnoringSafeArea(.all)
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+
             VStack {
-                Spacer(minLength: (UIScreen.main.bounds.width * 15) / 414)
-                
-                RoundedImage()
-                
-                Spacer(minLength: (UIScreen.main.bounds.width * 15) / 414)
-                
                 VStack {
-                    
-                    HStack {
-                        
-                        Image("ic_email")
-                            .padding(.leading, (UIScreen.main.bounds.width * 20) / 414)
-                        
-                        TextField("Email", text: $email)
-                            .frame(height: (UIScreen.main.bounds.width * 40) / 414, alignment: .center)
-                            .padding(.leading, (UIScreen.main.bounds.width * 10) / 414)
-                            .padding(.trailing, (UIScreen.main.bounds.width * 10) / 414)
-                            .font(.system(size: (UIScreen.main.bounds.width * 15) / 414, weight: .regular, design: .default))
-                            .imageScale(.small)
-                            .keyboardType(.emailAddress)
-                            .autocapitalization(UITextAutocapitalizationType.none)
-                        
+                    VStack {
+                        Spacer(minLength: (UIScreen.main.bounds.width * 15) / 414)
+                        RoundedImage()
                     }
-                    Seperator()
-                }
-                
-                Spacer(minLength: (UIScreen.main.bounds.width * 15) / 414)
-                
-                VStack {
-                    
-                    HStack {
-                        Image("ic_password")
-                            .padding(.leading, (UIScreen.main.bounds.width * 20) / 414)
-                        
-                        SecureField("Password", text: $password)
-                            .frame(height: (UIScreen.main.bounds.width * 40) / 414, alignment: .center)
-                            .padding(.leading, (UIScreen.main.bounds.width * 10) / 414)
-                            .padding(.trailing, (UIScreen.main.bounds.width * 10) / 414)
-                            .font(.system(size: (UIScreen.main.bounds.width * 15) / 414, weight: .regular, design: .default))
-                            .imageScale(.small)
-                    }
-                    Seperator()
-                    
-                }
-                
-                Spacer(minLength: (UIScreen.main.bounds.width * 15) / 414)
-                
-                VStack {
-                    Spacer()
-                    Button(action: {
-                        if  self.isValidInputs() {
-                            UserDefaults.standard.set(true, forKey: "Loggedin")
-                            UserDefaults.standard.synchronize()
+                    VStack {
+                        HStack {
+                            Image("ic_email")
+                                .padding(.leading, (UIScreen.main.bounds.width * 20) / 414)
+                            
+                            TextField("Email", text: $email)
+                                .frame(height: (UIScreen.main.bounds.width * 40) / 414, alignment: .center)
+                                .padding(.leading, (UIScreen.main.bounds.width * 10) / 414)
+                                .padding(.trailing, (UIScreen.main.bounds.width * 10) / 414)
+                                .font(.system(size: (UIScreen.main.bounds.width * 15) / 414, weight: .regular, design: .default))
+                                .imageScale(.small)
+                                .keyboardType(.emailAddress)
+                                .autocapitalization(UITextAutocapitalizationType.none)
                         }
-                        
-                    }) {
-                        ButtonWithBackground(btnText: "LOGIN")
+                        Seperator()
                     }
-                    Spacer()
+                    Spacer(minLength: (UIScreen.main.bounds.width * 15) / 414)
+                    VStack {
+                        HStack {
+                            Image("ic_password")
+                                .padding(.leading, (UIScreen.main.bounds.width * 20) / 414)
+                            
+                            SecureField("Password", text: $password)
+                                .frame(height: (UIScreen.main.bounds.width * 40) / 414, alignment: .center)
+                                .padding(.leading, (UIScreen.main.bounds.width * 10) / 414)
+                                .padding(.trailing, (UIScreen.main.bounds.width * 10) / 414)
+                                .font(.system(size: (UIScreen.main.bounds.width * 15) / 414, weight: .regular, design: .default))
+                                .imageScale(.small)
+                        }
+                        Seperator()
+                        
+                    }
+                    Spacer(minLength: (UIScreen.main.bounds.width * 15) / 414)
+                    VStack {
+                        Button(action: {
+//                            if  self.isValidInputs() {
+//                                UserDefaults.standard.set(true, forKey: "Loggedin")
+//                                UserDefaults.standard.synchronize()
+//                            }
+                            router.navigate(to: .homePage)
+                        }) {
+                            ButtonWithBackground(btnText: "LOGIN")
+                        }
+                        Spacer(minLength: (UIScreen.main.bounds.width * 15) / 414)
+                    }
                 }
+                .alert(isPresented: $showAlert, content: { self.alert })
             }
-            .alert(isPresented: $showAlert, content: { self.alert })
         }
     }
-    
     
     fileprivate func isValidInputs() -> Bool {
         

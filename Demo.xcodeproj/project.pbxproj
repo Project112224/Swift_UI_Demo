@@ -21,6 +21,7 @@
 		F9A94A782B71C3570062F68A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A94A772B71C3570062F68A /* Colors.swift */; };
 		F9A94A7A2B71C44F0062F68A /* ButtonWithBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A94A792B71C44F0062F68A /* ButtonWithBackground.swift */; };
 		F9A94A7D2B71C4D00062F68A /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A94A7C2B71C4D00062F68A /* Extension.swift */; };
+		F9A94A7F2B71C8350062F68A /* ImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A94A7E2B71C8350062F68A /* ImageName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		F9A94A772B71C3570062F68A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		F9A94A792B71C44F0062F68A /* ButtonWithBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithBackground.swift; sourceTree = "<group>"; };
 		F9A94A7C2B71C4D00062F68A /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		F9A94A7E2B71C8350062F68A /* ImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				F9A94A762B71C3510062F68A /* Style */,
 				F9A94A612B71BD610062F68A /* Router */,
 				F9A94A7C2B71C4D00062F68A /* Extension.swift */,
+				F9A94A7E2B71C8350062F68A /* ImageName.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 			files = (
 				F9A94A602B71BB1D0062F68A /* Router.swift in Sources */,
 				F9A94A782B71C3570062F68A /* Colors.swift in Sources */,
+				F9A94A7F2B71C8350062F68A /* ImageName.swift in Sources */,
 				F9A94A3A2B71B9080062F68A /* DemoApp.swift in Sources */,
 				F9A94A702B71BEC00062F68A /* HomeView.swift in Sources */,
 				F9A94A732B71C2A30062F68A /* RoundedImage.swift in Sources */,
