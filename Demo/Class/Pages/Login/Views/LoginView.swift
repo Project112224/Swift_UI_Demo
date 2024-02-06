@@ -18,9 +18,9 @@ struct LoginView: View {
     @State var mailLineColor = Colors.green500
     @State var pwLineColor = Colors.green500
     
-    var alert: Alert {
-        Alert(title: Text(""), message: Text(alertMsg), dismissButton: .default(Text("OK")))
-    }
+//    var alert: Alert {
+//        Alert(title: Text(""), message: Text(alertMsg), dismissButton: .default(Text("OK")))
+//    }
     
     var body: some View {
         ZStack {
@@ -86,7 +86,20 @@ struct LoginView: View {
                         Spacer(minLength: (UIScreen.main.bounds.width * 15) / 414)
                     }
                 }
-                .alert(isPresented: $showAlert, content: { self.alert })
+            }
+            if (showAlert) {
+                CustomAlert(
+                    presentAlert: $showAlert,
+                    alertType: .custom(
+                        title: "", 
+                        message: self.alertMsg,
+                        rightActionText: "OK"
+                    ),
+                    rightButtonAction:  {
+                    withAnimation{
+                        showAlert.toggle()
+                    }
+                })
             }
         }
     }

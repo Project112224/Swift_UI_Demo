@@ -22,6 +22,8 @@
 		F9A94A7A2B71C44F0062F68A /* ButtonWithBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A94A792B71C44F0062F68A /* ButtonWithBackground.swift */; };
 		F9A94A7D2B71C4D00062F68A /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A94A7C2B71C4D00062F68A /* Extension.swift */; };
 		F9A94A7F2B71C8350062F68A /* ImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A94A7E2B71C8350062F68A /* ImageName.swift */; };
+		F9A94A822B71E0500062F68A /* AlertType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A94A812B71E0500062F68A /* AlertType.swift */; };
+		F9A94A842B71E1000062F68A /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A94A832B71E1000062F68A /* CustomAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		F9A94A792B71C44F0062F68A /* ButtonWithBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithBackground.swift; sourceTree = "<group>"; };
 		F9A94A7C2B71C4D00062F68A /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		F9A94A7E2B71C8350062F68A /* ImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageName.swift; sourceTree = "<group>"; };
+		F9A94A812B71E0500062F68A /* AlertType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertType.swift; sourceTree = "<group>"; };
+		F9A94A832B71E1000062F68A /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,8 +255,18 @@
 		F9A94A7B2B71C46E0062F68A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F9A94A802B71E0400062F68A /* Alert */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F9A94A802B71E0400062F68A /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				F9A94A812B71E0500062F68A /* AlertType.swift */,
+				F9A94A832B71E1000062F68A /* CustomAlert.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,7 +377,9 @@
 				F9A94A732B71C2A30062F68A /* RoundedImage.swift in Sources */,
 				F9A94A7D2B71C4D00062F68A /* Extension.swift in Sources */,
 				F9A94A752B71C30D0062F68A /* Seperator.swift in Sources */,
+				F9A94A822B71E0500062F68A /* AlertType.swift in Sources */,
 				F9A94A652B71BE0A0062F68A /* LoginView.swift in Sources */,
+				F9A94A842B71E1000062F68A /* CustomAlert.swift in Sources */,
 				F9A94A632B71BD770062F68A /* PageName.swift in Sources */,
 				F9A94A7A2B71C44F0062F68A /* ButtonWithBackground.swift in Sources */,
 			);

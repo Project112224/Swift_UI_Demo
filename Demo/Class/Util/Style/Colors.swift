@@ -8,6 +8,7 @@
 import SwiftUI
 
 final class Colors: ObservableObject {
+    
     ///Green500 RGB(0,117,60)
     static let green500 = Color(hexString: "#00753C")
     
