@@ -11,7 +11,7 @@ struct Seperator: View {
     
     var body: some View {
         VStack {
-            Divider().background(Colors.lightGreyColor)
+            Divider().background(Colors.green500)
         }.padding()
             .frame(height: 1, alignment: .center)
     }

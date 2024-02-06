@@ -8,7 +8,12 @@
 import SwiftUI
 
 final class Colors: ObservableObject {
-    static let lightGreyColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
-    static let lightGreenColor = Color(red: 21.0/255.0, green: 183.0/255.0, blue: 177.0/255.0, opacity: 1.0)
-    static let lightblueColor = Color(red: 85.0/255.0, green: 84.0/255.0, blue: 166.0/255.0, opacity: 1.0)
+    ///Green500 RGB(0,117,60)
+    static let green500 = Color(hexString: "#00753C")
+    
+    ///Green600 RGB(13,86,55)
+    static let green600 = Color(hexString: "0D5637")
+    
+    ///Green700 RGB(23,74,75)
+    static let green700 = Color(hexString: "#174a4b")
 }

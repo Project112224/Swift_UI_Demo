@@ -83,7 +83,8 @@ struct LoginView: View {
                             router.navigate(to: .homePage)
                         }) {
                             ButtonWithBackground(btnText: "LOGIN")
-                        }
+                        }.background(.red)
+                        
                         Spacer(minLength: (UIScreen.main.bounds.width * 15) / 414)
                     }
                 }

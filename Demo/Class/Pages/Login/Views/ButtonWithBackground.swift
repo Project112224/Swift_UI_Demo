@@ -19,10 +19,10 @@ struct ButtonWithBackground: View {
                 .foregroundColor(.white)
                 .padding()
                 .frame(width: 140, height: 50)
-                .background(Colors.lightblueColor)
+                .background(Colors.green700)
                 .clipped()
                 .cornerRadius(5.0)
-                .shadow(color: Colors.lightblueColor, radius: 5, x: 0, y: 5)
+                .shadow(color: Colors.green600, radius: 5, x: 0, y: 5)
         }
     }
 }
