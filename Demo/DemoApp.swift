@@ -18,7 +18,7 @@ struct RoutingApp: App {
                 .navigationDestination(for: PageName.self) { name in
                     switch name {
                     case .loginPage: LoginView()
-                    case .homePage: HomeView()
+                    case .homePage: HomeViewController().navigationBarTitle("行動輔銷平台", displayMode: .inline)
                     }
                 }
                 .navigationBarHidden(router.hiddenHeader)
