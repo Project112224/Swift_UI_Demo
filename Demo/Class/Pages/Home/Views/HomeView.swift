@@ -2,7 +2,7 @@
 //  HomeView.swift
 //  Demo
 //
-//  Created by 高杉君 on 2024/2/6.
+//  Created by --- on 2024/2/6.
 //
 
 import SwiftUI
