@@ -14,6 +14,7 @@ struct CustomAlert: View {
     @State var alertType: AlertType = .success
     
     var isShowVerticalButtons = false
+    var messageColor = Color.black
     
     var leftButtonAction: (() -> ())?
     var rightButtonAction: (() -> ())?
@@ -43,7 +44,7 @@ struct CustomAlert: View {
                 Text(alertType.message())
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
                     .font(.system(size: 14))
-                    .foregroundColor(.black)
+                    .foregroundColor(messageColor)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 16)
                     .padding(.bottom, 16)
@@ -75,7 +76,7 @@ struct CustomAlert: View {
                         } label: {
                             Text(alertType.rightActionText)
                                 .font(.system(size: 16, weight: .bold))
-                                .foregroundColor(.pink)
+                                .foregroundColor(Colors.green500)
                                 .multilineTextAlignment(.center)
                                 .padding(15)
                                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
@@ -86,7 +87,10 @@ struct CustomAlert: View {
                     .padding([.horizontal, .bottom], 0)
 
             }
-            .frame(width: 270, height: alertType.height(isShowVerticalButtons: isShowVerticalButtons))
+            .frame(
+                width: UIScreen.main.bounds.width * 0.8,
+                height: alertType.height(isShowVerticalButtons: isShowVerticalButtons)
+            )
             .background(Color.white)
             .cornerRadius(20)
             

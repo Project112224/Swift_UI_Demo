@@ -18,8 +18,8 @@ struct ButtonWithBackground: View {
                 .font(.headline)
                 .foregroundColor(.white)
                 .padding()
-                .frame(width: 140, height: 50)
-                .background(Colors.green700)
+                .frame(width: UIScreen.main.bounds.width * 0.8, height: 50)
+                .background(Colors.green500)
                 .clipped()
                 .cornerRadius(50.0)
         }

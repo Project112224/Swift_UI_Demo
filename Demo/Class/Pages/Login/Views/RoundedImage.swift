@@ -10,7 +10,7 @@ import SwiftUI
 struct RoundedImage: View {
 
     var body: some View {
-        Image("launch_cubc_logo_icon")
+        Image(ImageName.launchCubcLogoIcon)
            .resizable()
            .aspectRatio(contentMode: .fill)
            .frame(width: 150, height: 150)
