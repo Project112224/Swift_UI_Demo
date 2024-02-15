@@ -14,10 +14,10 @@ struct RoutingApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $router.navPath) {
-                LoginView()
+                LoginViewController()
                 .navigationDestination(for: PageName.self) { name in
                     switch name {
-                    case .loginPage: LoginView()
+                    case .loginPage: LoginViewController()
                     case .homePage: TabbarViewController()
                     }
                 }

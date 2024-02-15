@@ -1,13 +1,13 @@
 //
-//  LoginView.swift
+//  LoginViewController.swift
 //  Demo
 //
-//  Created by --- on 2024/2/6.
+//  Created by --- on 2024/2/15.
 //
 
 import SwiftUI
 
-struct LoginView: View {
+struct LoginViewController: View {
     
     @EnvironmentObject var router: Router
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
@@ -17,8 +17,9 @@ struct LoginView: View {
     @State private var alertMsg: String = ""
     @State private var showAlert: Bool = false
     @State private var statusBarHeight: CGFloat = 0
-    @State private var errorCount: Int = 0
     @State private var isLock: Bool = false
+    @State private var viewModel: LoginViewModel?
+    @State private var errorCount: Int = 0
     
     var body: some View {
         ZStack {
@@ -88,8 +89,11 @@ struct LoginView: View {
                     VStack {
                         Spacer().frame(height: 20)
                         Button(action: {
-                            if  self.isValidInputs() {
+                            let message = viewModel?.valid(account: self.account, password: self.password)
+                            if message == nil {
                                 router.navigate(to: .homePage)
+                            } else {
+                                self.callAlert(message: message ?? "")
                             }
                         }) {
                             ButtonWithBackground(btnText: "LOGIN")
@@ -116,36 +120,12 @@ struct LoginView: View {
         }.onAppear {
             let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
             statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+            viewModel = LoginViewModel(errorCount: $errorCount)
         }
     }
     
-    fileprivate func isValidInputs() -> Bool {
-        
-        if (self.errorCount >= 4) {
-            self.callAlert(message: "輸入密碼錯誤第5次已鎖定，請洽管理員", _isLock: true)
-            return false
-        }
-        
-        if self.account.isEmpty || self.password.isEmpty {
-            self.callAlert(message: "請輸入帳號密碼")
-            return false
-        }
-        
-        if !self.account.isValidAccount {
-            self.callAlert(message: "請輸入正確帳號")
-            return false
-        }
-        
-        if !(self.password.isValidPassword) {
-            self.callAlert(message: "輸入密碼錯誤")
-            return false
-        }
-        
-        return true
-    }
-    
-    fileprivate func callAlert(message: String, _isLock: Bool = false) {
-        self.isLock = _isLock
+    fileprivate func callAlert(message: String) {
+        self.isLock = self.errorCount >= 4
         self.alertMsg = message
         self.errorCount += 1
         self.showAlert.toggle()
@@ -153,5 +133,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView()
+    LoginViewController()
 }
