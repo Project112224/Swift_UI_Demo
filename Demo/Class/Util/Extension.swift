@@ -11,8 +11,8 @@ import SwiftUI
 
 extension String {
     var isValidAccount: Bool {
-        let emailRegEx = "^[A-Z]{1}[0-9]{2,9}"
-        let predicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let accountRegEx = "^[A-Z]{1}[0-9]{8}$"
+        let predicate = NSPredicate(format:"SELF MATCHES %@", accountRegEx)
         return predicate.evaluate(with:self)
     }
     
