@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Appointment: Identifiable {
+struct Appointment: Identifiable, Decodable {
     let id: Int
     let time: String
     let client: String
@@ -17,4 +17,21 @@ struct Appointment: Identifiable {
     let note: String
     let access: String
     let record: String
+    
+    var recordEnum: recordType {
+        return recordType(rawValue: record) ?? .other
+    }
+    enum recordType: String, CaseIterable {
+        case file = "建檔" //建檔
+        case edit = "編輯" //編輯
+        case other
+    }
+    
+}
+
+struct Indices: Identifiable, Decodable {
+    var id: Int
+    let title: String
+    let totalIndices: Double
+    let todayIndices: Double
 }

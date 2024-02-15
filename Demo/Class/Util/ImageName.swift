@@ -23,7 +23,11 @@ class ImageName {
     static let profile: String = "profile"
     static let titleLogo: String = "title_logo"
     static let trendUp: String = "trend-up"
-    static let trend: String = "trend"
+    static let trendDown: String = "trend-down"
+    static let iconEdit: String = "icon_edit"
+    static let iconTrend: String = "trend"
+    static let iconMarket: String = "market"
+    static let iconCommodity: String = "commodity"
     
     // Login
     static let icAccount: String = "ic_account"
