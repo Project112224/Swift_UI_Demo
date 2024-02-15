@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-// MARK: - String
-
 extension String {
     var isValidAccount: Bool {
         let accountRegEx = "^[A-Z]{1}[0-9]{8}$"
@@ -22,8 +20,6 @@ extension String {
         return predicate.evaluate(with:self)
     }
 }
-
-// MARK: - Color
 
 extension Color {
     

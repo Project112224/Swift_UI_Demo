@@ -24,13 +24,18 @@ struct DateControlView: View {
             }
             .buttonStyle(BorderlessButtonStyle())
             
-            DatePicker("", selection: $selectedDate, displayedComponents: [.date])
-                        .environment(\.locale, Locale(identifier: "zh_Hant_TW"))
-                        .labelsHidden()
-                        .padding()
-                        .onChange(of: self.selectedDate) {
-                            print(self.selectedDate)
-                        }
+            ZStack {
+                Text(dateFormat())
+                DatePicker("", selection: $selectedDate, displayedComponents: [.date])
+                    .environment(\.locale, Locale(identifier: "zh_Hant_TW"))
+                    .labelsHidden()
+                    .colorInvert()
+                    .colorMultiply(.clear)
+                    .padding()
+                    .onChange(of: self.selectedDate) {
+                        print(self.selectedDate)
+                    }
+            }
             
             Button(action: {
                 self.selectedDate = Calendar.current.date(byAdding: .day, value: 1, to: self.selectedDate) ?? self.selectedDate
@@ -41,10 +46,29 @@ struct DateControlView: View {
                     .background(Color.clear)
             }
             .buttonStyle(BorderlessButtonStyle())
-            
         }
     }
     
+    func dateFormat() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd / MM / yyyy"
+        let dateComponents = Calendar.current.dateComponents(in: TimeZone.current, from: selectedDate)
+        let weekday = self.weekName(number: dateComponents.weekday!)
+        return "\(formatter.string(from: selectedDate)) (\(weekday))"
+    }
+    
+    func weekName(number: Int) -> String {
+        switch (number) {
+        case 1: return "日"
+        case 2: return "一"
+        case 3: return "二"
+        case 4: return "三"
+        case 5: return "四"
+        case 6: return "五"
+        case 7: return "六"
+        default: return ""
+        }
+    }
 }
 
 #Preview {

@@ -33,22 +33,21 @@ struct CommonSectionView: View {
     
     @ViewBuilder
     private func buildWorkBody() -> some View {
-        VStack {
+        HStack {
+            Text("工作檢視")
+                .font(.title)
+                .bold()
+                .foregroundColor(Colors.green700)
             Spacer()
             HStack {
-                Text("工作檢視")
-                    .font(.title)
-                    .bold()
-                    .foregroundColor(Colors.green700)
-                Spacer()
                 DateControlView().frame(width: 202, height: 38)
+                    .padding(.horizontal, 10)
                 SegmentControlView(action: { index in
                     print("select index \(index)")
                 })
             }
-            Spacer(minLength: 16)
         }
-        .frame(alignment: .top)
+        .frame(alignment: .trailing)
         .background(.white)
     }
     
@@ -101,8 +100,6 @@ struct CommonSectionView: View {
             .frame(alignment: .leading)
             
             HStack {
-                Spacer(minLength: 40)
-                
                 Text("美元匯率")
                     .font(.title3)
                     .bold()
@@ -111,11 +108,11 @@ struct CommonSectionView: View {
                 
                 Spacer()
                 
-                PickerControlView()
-                
-                SegmentControlView(items: ["走勢圖", "數據表"])
-                
-                Spacer(minLength: 40)
+                HStack {
+                    PickerControlView()
+                    
+                    SegmentControlView(items: ["走勢圖", "數據表"])
+                }
             }
         }
         
