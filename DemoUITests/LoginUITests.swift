@@ -31,8 +31,8 @@ final class DemoUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
-        let mailTextField = app.textFields["Email"]
-        XCTAssert(mailTextField.exists)
+        let accountTextField = app.textFields["Account"]
+        XCTAssert(accountTextField.exists)
         let pwTextField = app.secureTextFields["Password"]
         XCTAssert(pwTextField.exists)
         let loginButton = app.buttons["LOGIN"]
@@ -41,9 +41,9 @@ final class DemoUITests: XCTestCase {
         loginButton.tap()
         sleep(2)
         
-        mailTextField.tap()
-        mailTextField.typeText("b")
-        mailTextField.typeText("\n")
+        accountTextField.tap()
+        accountTextField.typeText("b")
+        accountTextField.typeText("\n")
         
         loginButton.tap()
         sleep(1)
@@ -61,16 +61,16 @@ final class DemoUITests: XCTestCase {
         sleep(2)
     }
     
-    func testValidEmail() throws {
+    func testValidAccount() throws {
         let app = XCUIApplication()
         app.launch()
         
-        let mailTextField = app.textFields["Email"]
+        let accountTextField = app.textFields["Account"]
         let pwTextField = app.secureTextFields["Password"]
         let loginButton = app.buttons["LOGIN"]
         
-        mailTextField.tap()
-        mailTextField.typeText("a")
+        accountTextField.tap()
+        accountTextField.typeText("a")
         
         pwTextField.tap()
         pwTextField.typeText("a")
@@ -88,12 +88,12 @@ final class DemoUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
-        let mailTextField = app.textFields["Email"]
+        let accountTextField = app.textFields["Account"]
         let pwTextField = app.secureTextFields["Password"]
         let loginButton = app.buttons["LOGIN"]
         
-        mailTextField.tap()
-        mailTextField.typeText("aasda@mail.com")
+        accountTextField.tap()
+        accountTextField.typeText("aasda@mail.com")
         
         pwTextField.tap()
         pwTextField.typeText("a")
@@ -107,16 +107,35 @@ final class DemoUITests: XCTestCase {
         sleep(1)
     }
     
+    
+    func testFiveErrorMessage() {
+        let app = XCUIApplication()
+        app.launch()
+        
+        let loginButton = app.buttons["LOGIN"]
+        
+        loginButton.tap()
+        sleep(1)
+        let alertButton = app.buttons["OK"]
+        for _ in 0...4 {
+            loginButton.tap()
+            sleep(1)
+            alertButton.tap()
+            sleep(1)
+        }
+        sleep(1)
+    }
+    
     func testToHomePage() {
         let app = XCUIApplication()
         app.launch()
         
-        let mailTextField = app.textFields["Email"]
+        let accountTextField = app.textFields["Account"]
         let pwTextField = app.secureTextFields["Password"]
         let loginButton = app.buttons["LOGIN"]
         
-        mailTextField.tap()
-        mailTextField.typeText("asd@mail.com")
+        accountTextField.tap()
+        accountTextField.typeText("asd@mail.com")
 
         pwTextField.tap()
         pwTextField.typeText("asd312@dasd")
@@ -125,4 +144,5 @@ final class DemoUITests: XCTestCase {
         loginButton.tap()
         sleep(1)
     }
+    
 }
