@@ -41,8 +41,10 @@ struct CommonSectionView: View {
                     .bold()
                     .foregroundColor(Colors.green700)
                 Spacer()
-                DateControlView().frame(width: 250)
-                SegmentControlView()
+                DateControlView().frame(width: 202, height: 38)
+                SegmentControlView(action: { index in
+                    print("select index \(index)")
+                })
             }
             Spacer(minLength: 16)
         }
