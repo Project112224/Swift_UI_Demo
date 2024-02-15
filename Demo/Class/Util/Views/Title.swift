@@ -22,8 +22,7 @@ struct Title: View {
                 .foregroundColor(Color.gray)
             Spacer()
             Text("行動輔銷平台")
-                .font(.system(size: 16))
-                .bold()
+                .font(.system(size: 16, weight: .bold))
         }.frame(width: 279.38)
     }
 }
