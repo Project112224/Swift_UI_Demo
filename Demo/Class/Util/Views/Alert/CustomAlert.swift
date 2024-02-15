@@ -59,6 +59,7 @@ struct CustomAlert: View {
                         if (!alertType.leftActionText.isEmpty) {
                             Button {
                                 leftButtonAction?()
+                                self.presentAlert.toggle()
                             } label: {
                                 Text(alertType.leftActionText)
                                     .font(.system(size: 16, weight: .bold))
@@ -73,6 +74,7 @@ struct CustomAlert: View {
 
                         Button {
                             rightButtonAction?()
+                            self.presentAlert.toggle()
                         } label: {
                             Text(alertType.rightActionText)
                                 .font(.system(size: 16, weight: .bold))
@@ -88,7 +90,7 @@ struct CustomAlert: View {
 
             }
             .frame(
-                width: UIScreen.main.bounds.width * 0.8,
+                width: UIScreen.main.bounds.width * 0.45,
                 height: alertType.height(isShowVerticalButtons: isShowVerticalButtons)
             )
             .background(Color.white)
