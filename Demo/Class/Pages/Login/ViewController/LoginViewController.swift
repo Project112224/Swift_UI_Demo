@@ -89,12 +89,13 @@ struct LoginViewController: View {
                     VStack {
                         Spacer().frame(height: 20)
                         Button(action: {
-                            let message = viewModel?.valid(account: self.account, password: self.password)
-                            if message == nil {
-                                router.navigate(to: .homePage)
-                            } else {
-                                self.callAlert(message: message ?? "")
-                            }
+//                            let message = viewModel?.valid(account: self.account, password: self.password)
+//                            if message == nil {
+//                                
+//                            } else {
+//                                self.callAlert(message: message ?? "")
+//                            }
+                            router.navigate(to: .homePage)
                         }) {
                             ButtonWithBackground(btnText: "LOGIN")
                         }
