@@ -12,11 +12,13 @@ struct LoginView: View {
     @EnvironmentObject var router: Router
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
 
-    @State var account: String = ""
-    @State var password: String = ""
-    @State var alertMsg = ""
-    @State var showAlert = false
+    @State private var account: String = ""
+    @State private var password: String = ""
+    @State private var alertMsg: String = ""
+    @State private var showAlert: Bool = false
     @State private var statusBarHeight: CGFloat = 0
+    @State private var errorCount: Int = 0
+    @State private var isLock: Bool = false
     
     var body: some View {
         ZStack {
@@ -101,15 +103,15 @@ struct LoginView: View {
                 CustomAlert(
                     presentAlert: $showAlert,
                     alertType: .custom(
-                        title: "", 
+                        title: "",
                         message: self.alertMsg,
                         rightActionText: "OK"
                     ),
+                    messageColor: isLock ? Color.red : Color.black,
                     rightButtonAction:  {
-                    withAnimation{
-                        showAlert.toggle()
+                        self.alertMsg = ""
                     }
-                })
+                )
             }
         }.onAppear {
             let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
@@ -118,29 +120,36 @@ struct LoginView: View {
     }
     
     fileprivate func isValidInputs() -> Bool {
-        var isEmpty = false
+        
+        if (self.errorCount >= 4) {
+            self.callAlert(message: "輸入密碼錯誤第5次已鎖定，請洽管理員", _isLock: true)
+            return false
+        }
         
         if self.account.isEmpty || self.password.isEmpty {
-            self.alertMsg = "請輸入帳號密碼"
-            self.showAlert.toggle()
+            self.callAlert(message: "請輸入帳號密碼")
             return false
         }
         
         if !self.account.isValidAccount {
-            self.alertMsg = "請輸入正確帳號"
-            self.showAlert.toggle()
+            self.callAlert(message: "請輸入正確帳號")
             return false
         }
         
         if !(self.password.isValidPassword) {
-            self.alertMsg = "輸入密碼錯誤"
-            self.showAlert.toggle()
+            self.callAlert(message: "輸入密碼錯誤")
             return false
         }
         
         return true
     }
     
+    fileprivate func callAlert(message: String, _isLock: Bool = false) {
+        self.isLock = _isLock
+        self.alertMsg = message
+        self.errorCount += 1
+        self.showAlert.toggle()
+    }
 }
 
 #Preview {
