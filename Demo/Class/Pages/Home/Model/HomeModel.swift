@@ -35,3 +35,18 @@ struct Indices: Identifiable, Decodable {
     let totalIndices: Double
     let todayIndices: Double
 }
+
+struct ChartData: Identifiable {
+    let id = UUID()
+    let date: Date
+    let formatDate: String
+    let changeRate: Double
+
+    init(year: Int, month: Int, day: Int, changeRate: Double) {
+        self.date = Calendar.current.date(from: .init(year: year, month: month, day: day)) ?? Date()
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "yyyy/MM/dd"
+        self.formatDate = inputFormatter.string(from: self.date)
+        self.changeRate = changeRate
+    }
+}

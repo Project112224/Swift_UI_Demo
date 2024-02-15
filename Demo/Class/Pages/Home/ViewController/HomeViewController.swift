@@ -30,6 +30,7 @@ struct HomeViewController: View {
             
             Section() {
                 CommonSectionView(viewModel: viewModel, type: .rate)
+                RateChartView()
             }
                         
         }
