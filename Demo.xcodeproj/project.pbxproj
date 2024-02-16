@@ -35,6 +35,7 @@
 		F9A94A7D2B71C4D00062F68A /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A94A7C2B71C4D00062F68A /* Extension.swift */; };
 		F9A94A7F2B71C8350062F68A /* ImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A94A7E2B71C8350062F68A /* ImageName.swift */; };
 		F9E1111D2B7E129400DE2E04 /* RateChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1111C2B7E129400DE2E04 /* RateChartView.swift */; };
+		F9E1111F2B7EEF9500DE2E04 /* DemoForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1111E2B7EEF9500DE2E04 /* DemoForm.swift */; };
 		F9EFD32C2B71FD1700C8A99A /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EFD32B2B71FD1700C8A99A /* LoginUITests.swift */; };
 		F9EFD34B2B72164800C8A99A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9EFD34A2B72164800C8A99A /* LaunchScreen.storyboard */; };
 		F9EFD3552B7D9DC700C8A99A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EFD3542B7D9DC700C8A99A /* LoginViewController.swift */; };
@@ -82,6 +83,7 @@
 		F9A94A7C2B71C4D00062F68A /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		F9A94A7E2B71C8350062F68A /* ImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageName.swift; sourceTree = "<group>"; };
 		F9E1111C2B7E129400DE2E04 /* RateChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateChartView.swift; sourceTree = "<group>"; };
+		F9E1111E2B7EEF9500DE2E04 /* DemoForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoForm.swift; sourceTree = "<group>"; };
 		F9EFD32B2B71FD1700C8A99A /* LoginUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
 		F9EFD34A2B72164800C8A99A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9EFD3542B7D9DC700C8A99A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				BCDB75E02B72293E00EF5241 /* SegmentControlView.swift */,
 				F94ABB172B7DB3EF003D6466 /* Alert */,
 				F94ABB1A2B7DB3EF003D6466 /* Title.swift */,
+				F9E1111E2B7EEF9500DE2E04 /* DemoForm.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				F94ABB1B2B7DB3EF003D6466 /* AlertType.swift in Sources */,
 				F9A94A7A2B71C44F0062F68A /* ButtonWithBackground.swift in Sources */,
 				F9EFD3552B7D9DC700C8A99A /* LoginViewController.swift in Sources */,
+				F9E1111F2B7EEF9500DE2E04 /* DemoForm.swift in Sources */,
 				BCDB75D22B71D2FF00EF5241 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

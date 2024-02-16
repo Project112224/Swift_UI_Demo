@@ -21,7 +21,10 @@ struct SegmentControlView: View {
             ZStack {
                 HStack(spacing: 0) {
                     ForEach(self.items.indices, id: \.self) { index in
-                        Button(action: {}, label: {
+                        Button(action: {
+                            self.section = index
+                            self.action?(index)
+                        }, label: {
                             Text(self.items[index])
                                 .foregroundColor(index != self.section ? Colors.nonSelect : .white)
                                 .font(.system(size: 14))
@@ -33,10 +36,6 @@ struct SegmentControlView: View {
                                 }
                             }
                         )
-                        .onTapGesture {
-                            self.section = index
-                            self.action?(index)
-                        }
                     }
                 }
                 .background(

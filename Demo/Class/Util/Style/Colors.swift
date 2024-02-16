@@ -20,6 +20,12 @@ final class Colors: ObservableObject {
     ///Green700 RGB(23,74,75)
     static let green800 = Color(hexString: "#174a4b")
     
+    ///RGB(23,74,75)
+    static let grayBorder = Color(hexString: "#CCCCCC")
+    
+    ///RGB(23,74,75)
+    static let grayBackground = Color(hexString: "#EFEFEF")
+    
     // MARK: - Element Color
     
     /// segment picker
