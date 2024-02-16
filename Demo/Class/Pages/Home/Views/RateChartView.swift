@@ -73,11 +73,15 @@ struct RateChartView: View {
      
     var body: some View {
         VStack(spacing: 20) {
-            Spacer()
-            HStack {
-                Button("<") {
+            HStack(spacing: 14) {
+                Button(action: {
                     print("left")
-                }
+                }, label: {
+                    Image(ImageName.chevronLeft)
+                }).frame(width: 24, height: 24)
+                    .background(Colors.grayBackground)
+                    .clipShape(.circle)
+                
                 Chart {
                     ForEach(volumeData, id: \.0) { series in
                         ForEach(series.1) { item in
@@ -108,11 +112,15 @@ struct RateChartView: View {
 //                    }
 //                }
                 .chartYScale(domain: [30, 33])
-                Button(">") {
+                
+                Button(action: {
                     print("right")
-                }
+                }, label: {
+                    Image(ImageName.chevronRight)
+                }).frame(width: 24, height: 24)
+                    .background(Colors.grayBackground)
+                    .clipShape(.circle)
             }
-            Spacer()
         }
         .padding()
     }

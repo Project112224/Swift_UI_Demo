@@ -22,7 +22,7 @@ struct PickerControlView: View {
         .onChange(of: self.selecteItem) {
             print(self.selecteItem)
         }
-        
+        .accentColor(.black)
     }
     
 }

@@ -18,15 +18,11 @@ struct ProductTypeCollView: View {
     var body: some View {
         
         ScrollView(.horizontal, showsIndicators: false) {
-            Spacer(minLength: 8)
             HStack {
-                
                 ForEach(viewModel.indicesDatas) { indicesData in
-                    ProductTypeCollVCell(indicesData: indicesData)
+                    ProductTypeCollVCell(indicesData: indicesData, isLast: viewModel.indicesDatas.last?.id == indicesData.id)
                 }
-                
             }
-            Spacer(minLength: 16)
         }
         
     }

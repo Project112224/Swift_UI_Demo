@@ -14,18 +14,14 @@ struct DemoForm<Content: View>: View {
     
     var body: some View {
         ZStack {
-            backgroundColor
-                  .frame(
-                    maxWidth: .infinity,
-                    maxHeight: .infinity
-                  )
-                  .border(Colors.grayBorder, width: 1)
-            VStack {
+            VStack(spacing: 0) {
                 content
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 24)
         }
+        .border(Colors.grayBorder, width: 1)
+        .background(backgroundColor)
     }
 }
 

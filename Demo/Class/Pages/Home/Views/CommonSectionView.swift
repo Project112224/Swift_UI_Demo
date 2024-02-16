@@ -35,7 +35,7 @@ struct CommonSectionView: View {
     private func buildWorkBody() -> some View {
         HStack {
             Text("工作檢視")
-                .font(.title)
+                .font(.system(size: 18, weight: .bold))
                 .bold()
                 .foregroundColor(Colors.green700)
             Spacer()
@@ -55,7 +55,7 @@ struct CommonSectionView: View {
     private func buildIndicesBody() -> some View {
         HStack {
             Text("常用指數")
-                .font(.title)
+                .font(.system(size: 18, weight: .bold))
                 .bold()
                 .foregroundColor(Colors.green700)
                 .frame(alignment: .leading)
@@ -80,7 +80,7 @@ struct CommonSectionView: View {
         VStack {
             HStack {
                 Text("匯率走勢")
-                    .font(.title)
+                    .font(.system(size: 18, weight: .bold))
                     .bold()
                     .foregroundColor(Colors.green700)
                     .frame(alignment: .leading)
@@ -101,8 +101,7 @@ struct CommonSectionView: View {
             
             HStack {
                 Text("美元匯率")
-                    .font(.title3)
-                    .bold()
+                    .font(.system(size: 18))
                     .foregroundColor(Color.black)
                     .frame(alignment: .leading)
                 

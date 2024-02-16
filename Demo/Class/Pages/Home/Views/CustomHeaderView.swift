@@ -9,39 +9,39 @@ import SwiftUI
 
 struct CustomHeaderView: View {
     var body: some View {
-        HStack {
+        HStack(spacing: 12) {
             //Spacer()
             //index
             Text("")
-                .frame(width: UIScreen.main.bounds.width * 0.05, alignment: .leading)
+                .frame(width: 20, alignment: .leading)
             Text("時間")
-                .font(.headline)
-                .frame(width: UIScreen.main.bounds.width * 0.1, alignment: .leading)
+                .font(.system(size: 14))
+                .frame(width: 80, alignment: .leading)
             Text("客戶")
-                .font(.headline)
-                .frame(width: UIScreen.main.bounds.width * 0.1, alignment: .leading)
+                .font(.system(size: 14))
+                .frame(width: 86, alignment: .leading)
             Text("類別")
-                .font(.headline)
-                .frame(width: UIScreen.main.bounds.width * 0.16, alignment: .leading)
+                .font(.system(size: 14))
+                .frame(width: 121, alignment: .leading)
             Text("地點")
-                .font(.headline)
-                .frame(width: UIScreen.main.bounds.width * 0.22, alignment: .leading)
+                .font(.system(size: 14))
+                .frame(width: 121, alignment: .leading)
             Text("視圖")
-                .font(.headline)
-                .frame(width: UIScreen.main.bounds.width * 0.05, alignment: .center)
+                .font(.system(size: 14))
+                .frame(width: 40, alignment: .center)
             Text("註記")
-                .font(.headline)
-                .frame(width: UIScreen.main.bounds.width * 0.05, alignment: .center)
+                .font(.system(size: 14))
+                .frame(width: 40, alignment: .center)
             Text("互動紀錄")
-                .font(.headline)
-                .frame(width: UIScreen.main.bounds.width * 0.09, alignment: .center)
+                .font(.system(size: 14))
+                .frame(width: 60, alignment: .center)
             Text("約訪")
-                .font(.headline)
-                .frame(width: UIScreen.main.bounds.width * 0.07, alignment: .center)
+                .font(.system(size: 14))
+                .frame(width: 60, alignment: .center)
             //Spacer()
         }
         .listRowBackground(Color.white)
-        .frame(alignment: .leading)
+        .frame(height: 40, alignment: .leading)
     }
 }
 

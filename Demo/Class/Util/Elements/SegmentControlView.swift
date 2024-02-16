@@ -47,7 +47,7 @@ struct SegmentControlView: View {
                 )
             }
             .animation(.default, value: section)
-            .background(Capsule().stroke(Colors.border, lineWidth: 3))
+            .background(Capsule().stroke(Colors.border, lineWidth: 1))
             .frame(height: 38)
         }
     }
