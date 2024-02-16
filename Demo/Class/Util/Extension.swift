@@ -62,3 +62,21 @@ extension UIColor {
         self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
 }
+
+extension TabbarViewController {
+    func CustomTabItem(imageName: String, title: String, isActive: Bool) -> some View{
+        VStack(spacing: 10) {
+            Image(imageName)
+                .resizable()
+                .renderingMode(.template)
+                .foregroundColor(isActive ? .black : .gray)
+                .frame(width: 20, height: 20)
+            
+            if isActive {
+                Text(title)
+                    .font(.system(size: 14))
+                    .foregroundColor(isActive ? .black : .gray)
+            }
+        }
+    }
+}

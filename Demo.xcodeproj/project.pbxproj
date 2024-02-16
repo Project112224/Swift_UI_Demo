@@ -11,7 +11,6 @@
 		BCC629352B735612009CC707 /* PickerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC629342B735612009CC707 /* PickerControlView.swift */; };
 		BCC629372B735787009CC707 /* ProductTypeCollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC629362B735787009CC707 /* ProductTypeCollView.swift */; };
 		BCC629392B7357A4009CC707 /* ProductTypeCollVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC629382B7357A4009CC707 /* ProductTypeCollVCell.swift */; };
-		BCC6293B2B736CA9009CC707 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC6293A2B736CA9009CC707 /* TabbarViewController.swift */; };
 		BCDB75D22B71D2FF00EF5241 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDB75D12B71D2FF00EF5241 /* HomeViewController.swift */; };
 		BCDB75D62B7203C000EF5241 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDB75D52B7203C000EF5241 /* HomeModel.swift */; };
 		BCDB75D92B7204E300EF5241 /* WorkRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDB75D82B7204E300EF5241 /* WorkRowView.swift */; };
@@ -38,6 +37,9 @@
 		F9E1111F2B7EEF9500DE2E04 /* DemoForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1111E2B7EEF9500DE2E04 /* DemoForm.swift */; };
 		F9E111242B7F3C0000DE2E04 /* chart.json in Resources */ = {isa = PBXBuildFile; fileRef = F9E111232B7F3C0000DE2E04 /* chart.json */; };
 		F9E111262B7F3C1600DE2E04 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E111252B7F3C1600DE2E04 /* APIConfig.swift */; };
+		F9E1112A2B7F626800DE2E04 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E111292B7F626800DE2E04 /* TabbarViewController.swift */; };
+		F9E1112D2B7F62A300DE2E04 /* TabbarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1112C2B7F62A300DE2E04 /* TabbarItems.swift */; };
+		F9E111302B7F649B00DE2E04 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1112F2B7F649B00DE2E04 /* EmptyView.swift */; };
 		F9EFD32C2B71FD1700C8A99A /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EFD32B2B71FD1700C8A99A /* LoginUITests.swift */; };
 		F9EFD34B2B72164800C8A99A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9EFD34A2B72164800C8A99A /* LaunchScreen.storyboard */; };
 		F9EFD3552B7D9DC700C8A99A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EFD3542B7D9DC700C8A99A /* LoginViewController.swift */; };
@@ -59,7 +61,6 @@
 		BCC629342B735612009CC707 /* PickerControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerControlView.swift; sourceTree = "<group>"; };
 		BCC629362B735787009CC707 /* ProductTypeCollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTypeCollView.swift; sourceTree = "<group>"; };
 		BCC629382B7357A4009CC707 /* ProductTypeCollVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTypeCollVCell.swift; sourceTree = "<group>"; };
-		BCC6293A2B736CA9009CC707 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		BCDB75D12B71D2FF00EF5241 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BCDB75D52B7203C000EF5241 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		BCDB75D82B7204E300EF5241 /* WorkRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkRowView.swift; sourceTree = "<group>"; };
@@ -88,6 +89,9 @@
 		F9E1111E2B7EEF9500DE2E04 /* DemoForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoForm.swift; sourceTree = "<group>"; };
 		F9E111232B7F3C0000DE2E04 /* chart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chart.json; sourceTree = "<group>"; };
 		F9E111252B7F3C1600DE2E04 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
+		F9E111292B7F626800DE2E04 /* TabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		F9E1112C2B7F62A300DE2E04 /* TabbarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarItems.swift; sourceTree = "<group>"; };
+		F9E1112F2B7F649B00DE2E04 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		F9EFD32B2B71FD1700C8A99A /* LoginUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
 		F9EFD34A2B72164800C8A99A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9EFD3542B7D9DC700C8A99A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -227,7 +231,8 @@
 		F9A94A582B71BA6B0062F68A /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				BCC6293A2B736CA9009CC707 /* TabbarViewController.swift */,
+				F9E1112E2B7F649000DE2E04 /* Empty */,
+				F9E111272B7F626800DE2E04 /* Tabbar */,
 				F9EFD3492B72163500C8A99A /* Launch */,
 				F9A94A592B71BA6B0062F68A /* Home */,
 				F9A94A5A2B71BA6B0062F68A /* Login */,
@@ -347,6 +352,39 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		F9E111272B7F626800DE2E04 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				F9E1112B2B7F628B00DE2E04 /* Modules */,
+				F9E111282B7F626800DE2E04 /* ViewController */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		F9E111282B7F626800DE2E04 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F9E111292B7F626800DE2E04 /* TabbarViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F9E1112B2B7F628B00DE2E04 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F9E1112C2B7F62A300DE2E04 /* TabbarItems.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		F9E1112E2B7F649000DE2E04 /* Empty */ = {
+			isa = PBXGroup;
+			children = (
+				F9E1112F2B7F649B00DE2E04 /* EmptyView.swift */,
+			);
+			path = Empty;
+			sourceTree = "<group>";
+		};
 		F9EFD3492B72163500C8A99A /* Launch */ = {
 			isa = PBXGroup;
 			children = (
@@ -462,9 +500,10 @@
 				BCC629392B7357A4009CC707 /* ProductTypeCollVCell.swift in Sources */,
 				BCDB75DB2B7206CC00EF5241 /* HomeViewModel.swift in Sources */,
 				F9A94A602B71BB1D0062F68A /* Router.swift in Sources */,
-				BCC6293B2B736CA9009CC707 /* TabbarViewController.swift in Sources */,
 				F9A94A782B71C3570062F68A /* Colors.swift in Sources */,
 				BCC629352B735612009CC707 /* PickerControlView.swift in Sources */,
+				F9E1112A2B7F626800DE2E04 /* TabbarViewController.swift in Sources */,
+				F9E1112D2B7F62A300DE2E04 /* TabbarItems.swift in Sources */,
 				BCDB75D92B7204E300EF5241 /* WorkRowView.swift in Sources */,
 				F9EFD3592B7D9E6A00C8A99A /* LoginViewModel.swift in Sources */,
 				F9A94A7F2B71C8350062F68A /* ImageName.swift in Sources */,
@@ -486,6 +525,7 @@
 				F94ABB1B2B7DB3EF003D6466 /* AlertType.swift in Sources */,
 				F9A94A7A2B71C44F0062F68A /* ButtonWithBackground.swift in Sources */,
 				F9EFD3552B7D9DC700C8A99A /* LoginViewController.swift in Sources */,
+				F9E111302B7F649B00DE2E04 /* EmptyView.swift in Sources */,
 				F9E1111F2B7EEF9500DE2E04 /* DemoForm.swift in Sources */,
 				BCDB75D22B71D2FF00EF5241 /* HomeViewController.swift in Sources */,
 			);
