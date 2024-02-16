@@ -38,4 +38,9 @@ final class Colors: ObservableObject {
     /// tabbar unselect tint color
     static let unselectedItemTintColor = UIColor(hexString: "#666666")
     
+    /// chart
+    static let greenLine = Color(hexString: "#1D9355")
+    
+    static let brownLine = Color(hexString: "#EA7E30")
+    
 }

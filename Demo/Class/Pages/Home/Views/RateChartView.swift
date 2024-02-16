@@ -10,67 +10,14 @@ import Charts
 
 struct RateChartView: View {
     
-    let buyData = [
-        ChartData(year: 2020, month: 11, day: 1, changeRate: 30.5),
-        ChartData(year: 2020, month: 11, day: 7, changeRate: 30.6),
-        ChartData(year: 2020, month: 11, day: 14, changeRate: 30.8),
-        ChartData(year: 2020, month: 11, day: 21, changeRate: 30.6),
-        ChartData(year: 2020, month: 11, day: 28, changeRate: 30.8),
-        ChartData(year: 2020, month: 11, day: 31, changeRate: 30.9),
-        ChartData(year: 2020, month: 12, day: 1, changeRate: 30.8),
-        ChartData(year: 2020, month: 12, day: 7, changeRate: 30.7),
-        ChartData(year: 2020, month: 12, day: 14, changeRate: 30.8),
-        ChartData(year: 2020, month: 12, day: 21, changeRate: 30.9),
-        ChartData(year: 2020, month: 12, day: 28, changeRate: 30.8),
-        ChartData(year: 2021, month: 1, day: 1, changeRate: 30.8),
-        ChartData(year: 2021, month: 1, day: 7, changeRate: 30.8),
-        ChartData(year: 2021, month: 1, day: 14, changeRate: 31.0),
-        ChartData(year: 2021, month: 1, day: 21, changeRate: 31.3),
-        ChartData(year: 2021, month: 1, day: 28, changeRate: 31.5),
-        ChartData(year: 2021, month: 1, day: 31, changeRate: 31.6),
-        ChartData(year: 2021, month: 2, day: 1, changeRate: 31.8),
-        ChartData(year: 2021, month: 2, day: 7, changeRate: 32.1),
-        ChartData(year: 2021, month: 2, day: 14, changeRate: 31.6),
-        ChartData(year: 2021, month: 2, day: 21, changeRate: 31.7),
-        ChartData(year: 2021, month: 2, day: 28, changeRate: 31.8),
-        ChartData(year: 2021, month: 2, day: 30, changeRate: 31.9),
-    ]
+    let buyData: [RateData]
+    let sellingData: [RateData]
     
-    let sellingData = [
-        ChartData(year: 2020, month: 11, day: 1, changeRate: 30.1),
-        ChartData(year: 2020, month: 11, day: 7, changeRate: 30.2),
-        ChartData(year: 2020, month: 11, day: 14, changeRate: 30.4),
-        ChartData(year: 2020, month: 11, day: 21, changeRate: 30.2),
-        ChartData(year: 2020, month: 11, day: 28, changeRate: 30.4),
-        ChartData(year: 2020, month: 11, day: 31, changeRate: 30.5),
-        ChartData(year: 2020, month: 12, day: 1, changeRate: 30.4),
-        ChartData(year: 2020, month: 12, day: 7, changeRate: 30.3),
-        ChartData(year: 2020, month: 12, day: 14, changeRate: 30.4),
-        ChartData(year: 2020, month: 12, day: 21, changeRate: 30.5),
-        ChartData(year: 2020, month: 12, day: 28, changeRate: 30.4),
-        ChartData(year: 2021, month: 1, day: 1, changeRate: 30.4),
-        ChartData(year: 2021, month: 1, day: 7, changeRate: 30.4),
-        ChartData(year: 2021, month: 1, day: 14, changeRate: 30.6),
-        ChartData(year: 2021, month: 1, day: 21, changeRate: 30.9),
-        ChartData(year: 2021, month: 1, day: 28, changeRate: 31.1),
-        ChartData(year: 2021, month: 1, day: 31, changeRate: 31.2),
-        ChartData(year: 2021, month: 2, day: 1, changeRate: 31.4),
-        ChartData(year: 2021, month: 2, day: 7, changeRate: 31.7),
-        ChartData(year: 2021, month: 2, day: 14, changeRate: 31.2),
-        ChartData(year: 2021, month: 2, day: 21, changeRate: 31.3),
-        ChartData(year: 2021, month: 2, day: 28, changeRate: 31.4),
-        ChartData(year: 2021, month: 2, day: 30, changeRate: 31.5),
-    ]
-    
-    var volumeData: [(String, [ChartData])]
-    
-    init() {
-        volumeData = [
-            (state: "賣出", data: self.buyData),
-            (state: "買入", data: self.sellingData),
-        ]
+    init(buy: [RateData], sell: [RateData]) {
+        self.buyData = buy
+        self.sellingData = sell
     }
-     
+    
     var body: some View {
         VStack(spacing: 20) {
             HStack(spacing: 14) {
@@ -83,35 +30,45 @@ struct RateChartView: View {
                     .clipShape(.circle)
                 
                 Chart {
-                    ForEach(volumeData, id: \.0) { series in
-                        ForEach(series.1) { item in
-                            LineMark(
-                                x: .value("Date", item.formatDate),
-                                y: .value("Rate", item.changeRate)
-                            )
-                        }
-                        .foregroundStyle(by: .value("Volume", series.0))
+                    ForEach(buyData) { item in
+                        LineMark(
+                            x: .value("Date", item.date),
+                            y: .value("Rate", item.rate)
+                        )
+                        .interpolationMethod(.catmullRom)
+                        .foregroundStyle(Colors.greenLine)
+                        .foregroundStyle(by: .value("Date", "賣出"))
+                        
+                    }
+
+                    ForEach(sellingData) { item in
+                        LineMark(
+                            x: .value("Date", item.date),
+                            y: .value("Rate", item.rate)
+                        )
+                        .interpolationMethod(.catmullRom)
+                        .foregroundStyle(Colors.brownLine)
+                        .foregroundStyle(by: .value("Date", "買入"))
                     }
                 }
+                .chartForegroundStyleScale([
+                    "賣出" : Colors.greenLine,
+                    "買入": Colors.brownLine
+                ])
                 .chartLegend(alignment: .trailing)
                 .frame(height: 150)
-//                .chartXAxis {
-//                    AxisMarks(values: .stride(by: .month, count: 1)) { value in
-                        
-//                        if let date = value.as(Date.self) {
-//                            let month = Calendar.current.component(.month, from: date)
-//                            switch month {
-//                            case 0, 12:
-//                                AxisValueLabel(format: .dateTime.month())
-//                            default:
-//                                AxisValueLabel(format: .dateTime.hour(.defaultDigits(amPM: .omitted)))
-//                            }
-//                            AxisGridLine()
-//                            AxisTick()
-//                        }
-//                    }
-//                }
-                .chartYScale(domain: [30, 33])
+                .chartYScale(domain: [30, 32])
+                .chartYAxis() { AxisMarks(position: .leading) }
+                .chartXAxis {
+                    AxisMarks { value in
+                        let data = self.sellingData[value.index]
+                        if (data.day == "05") {
+                            AxisValueLabel {
+                                Text(data.formatDate)
+                            }
+                        }
+                    }
+                }
                 
                 Button(action: {
                     print("right")
@@ -127,5 +84,5 @@ struct RateChartView: View {
 }
 
 #Preview {
-    RateChartView()
+    RateChartView(buy: [], sell: [])
 }

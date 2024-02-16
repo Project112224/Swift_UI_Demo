@@ -294,4 +294,9 @@ class HomeViewModel: ObservableObject {
         
     }
     
+    
+    func getChart() -> ChartData? {
+        return APIConfig.getChart()
+    }
+    
 }

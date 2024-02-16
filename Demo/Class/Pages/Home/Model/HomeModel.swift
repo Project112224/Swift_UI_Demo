@@ -36,17 +36,33 @@ struct Indices: Identifiable, Decodable {
     let todayIndices: Double
 }
 
-struct ChartData: Identifiable {
+struct ChartData: Codable, Identifiable {
     let id = UUID()
-    let date: Date
-    let formatDate: String
-    let changeRate: Double
+    var buy: [RateData]
+    var selling: [RateData]
 
-    init(year: Int, month: Int, day: Int, changeRate: Double) {
-        self.date = Calendar.current.date(from: .init(year: year, month: month, day: day)) ?? Date()
-        let inputFormatter = DateFormatter()
-        inputFormatter.dateFormat = "yyyy/MM/dd"
-        self.formatDate = inputFormatter.string(from: self.date)
-        self.changeRate = changeRate
+    enum CodingKeys: String, CodingKey {
+        case buy
+        case selling
+    }
+}
+
+struct RateData: Codable, Identifiable {
+    let id = UUID()
+    var date: String
+    var rate: Double
+
+    var formatDate: String {
+        let dateList = self.date.split(separator: "/")
+        return "\(dateList[0])/\(dateList[1])"
+    }
+    
+    var day: String {
+        return String(self.date.split(separator: "/").last ?? "")
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case date
+        case rate
     }
 }

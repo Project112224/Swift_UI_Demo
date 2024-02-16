@@ -11,6 +11,9 @@ struct HomeViewController: View {
     
     let viewModel: HomeViewModel = HomeViewModel()
     
+    @State var buyData: [RateData]?
+    @State var sellData: [RateData]?
+    
     var body: some View {
         ZStack(alignment: .top) {
             Colors.grayBackground.ignoresSafeArea()
@@ -31,12 +34,19 @@ struct HomeViewController: View {
                 
                 DemoForm {
                     CommonSectionView(viewModel: viewModel, type: .rate)
-                    RateChartView()
+                    RateChartView(
+                        buy: self.buyData ?? [],
+                        sell: self.sellData ?? []
+                    )
                         .frame(height: 180, alignment: .center)
                 }
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 24)
+        }.onAppear() {
+            let chartData = viewModel.getChart()
+            self.buyData = chartData?.buy
+            self.sellData = chartData?.selling
         }
     }
 
