@@ -15,17 +15,15 @@ struct TabbarViewController: View {
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().isTranslucent = true
         UINavigationBar.appearance().tintColor = .black
-        UINavigationBar.appearance().backgroundColor = .white
-        UITabBar.appearance().backgroundColor = .white
-        UITabBar.appearance().unselectedItemTintColor = Colors.unselectedItemTintColor
+        UINavigationBar.appearance().backgroundColor = .clear
+        UITabBar.appearance().backgroundColor = .clear
+        UITabBar.appearance().barTintColor = .clear
     }
     
     var body: some View {
 
         TabView(selection: $selectedView) {
-            
             HomeViewController().tag(0)
-            
             EmptyView().tag(1)
             EmptyView().tag(2)
             EmptyView().tag(3)
@@ -34,22 +32,21 @@ struct TabbarViewController: View {
             EmptyView().tag(6)
             EmptyView().tag(7)
         }
-        .accentColor(Colors.green700)
         .navigationViewStyle(StackNavigationViewStyle())
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle("", displayMode: .inline)
         .navigationBarItems(
             leading: Title(),
-            trailing: Text("2023 / 12 / 11 (一) 理專 蔡立方 您好")
-                .font(.system(size: 14))
+            trailing: Text("2023 / 12 / 11 (一) 理專 蔡立方 您好").font(.system(size: 14))
         )
         .toolbarBackground(.visible, for: .navigationBar)
         .toolbarBackground(.white, for: .navigationBar)
-        .toolbar(.visible, for: .tabBar)
-        .toolbarBackground(.white, for: .tabBar)
-        
-        ZStack{
-            HStack{
+        .toolbarColorScheme(.none, for: .tabBar)
+        .toolbarBackground(.hidden, for: .tabBar)
+        .toolbarBackground(.clear, for: .tabBar)
+
+        ZStack {
+            HStack(spacing: 41.71) {
                 ForEach((TabbedItems.allCases), id: \.self){ item in
                     Button{
                         selectedView = item.rawValue
@@ -58,8 +55,30 @@ struct TabbarViewController: View {
                     }
                 }
             }
-            .padding(6)
-        }
+            .frame(width: UIScreen.main.bounds.width)
+        }.background(.clear)
+    }
+}
+
+extension TabbarViewController {
+    func CustomTabItem(imageName: String, title: String, isActive: Bool) -> some View{
+        VStack(spacing: 10) {
+            if (isActive) {
+                Rectangle()
+                    .frame(width: 40, height: 4)
+                    .foregroundColor(Colors.greenLine)
+                
+            }
+            Image(imageName)
+                .resizable()
+                .renderingMode(.template)
+                .foregroundColor(isActive ? Colors.green700 : Colors.unselectedItemTintColor)
+                .frame(width: 24, height: 24)
+            
+            Text(title)
+                .font(.system(size: 14))
+                .foregroundColor(isActive ? Colors.green700 : Colors.unselectedItemTintColor)
+        }.frame(minWidth: 58, minHeight: 64)
     }
 }
 
