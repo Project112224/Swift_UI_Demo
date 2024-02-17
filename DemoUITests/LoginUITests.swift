@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class DemoUITests: XCTestCase {
+final class LoginUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -22,45 +22,51 @@ final class DemoUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        let app = XCUIApplication()
-        app.launch()
-    }
-
-    func testEmpty() throws {
+    func testExists() throws {
         let app = XCUIApplication()
         app.launch()
         
         let accountTextField = app.textFields["Account"]
-        XCTAssert(accountTextField.exists)
         let pwTextField = app.secureTextFields["Password"]
-        XCTAssert(pwTextField.exists)
         let loginButton = app.buttons["LOGIN"]
+        
+        XCTAssert(accountTextField.exists)
+        XCTAssert(pwTextField.exists)
         XCTAssert(loginButton.exists)
-        
-        loginButton.tap()
-        sleep(2)
-        
-        accountTextField.tap()
-        accountTextField.typeText("b")
-        accountTextField.typeText("\n")
-        
-        loginButton.tap()
-        sleep(1)
-        
-        pwTextField.tap()
-        pwTextField.typeText("b")
-        pwTextField.typeText("\n")
-        
-        loginButton.tap()
-        sleep(2)
-        
-        let alertButton = app.buttons["OK"]
-        XCTAssert(alertButton.exists)
-        alertButton.tap()
-        sleep(2)
     }
     
+    func testEmpty() throws {
+        let app = XCUIApplication()
+        app.launch()
+        let accountTextField = app.textFields["Account"]
+        let pwTextField = app.secureTextFields["Password"]
+        let loginButton = app.buttons["LOGIN"]
+        
+        // 帳號密碼空值
+        loginButton.tap()
+        sleep(1)
+        let alertButton = app.buttons["OK"]
+        alertButton.tap()
+        
+        // 密碼空值
+        accountTextField.tap()
+        accountTextField.typeText("asdas")
+        loginButton.tap()
+        sleep(1)
+        alertButton.tap()
+        
+        accountTextField.tap()
+        accountTextField.clearText()
+        
+        // 帳號空值
+        pwTextField.tap()
+        pwTextField.typeText("zxczxz")
+        loginButton.tap()
+        sleep(1)
+        alertButton.tap()
+    }
+    
+    /// 帳號
     func testValidAccount() throws {
         let app = XCUIApplication()
         app.launch()
@@ -69,41 +75,104 @@ final class DemoUITests: XCTestCase {
         let pwTextField = app.secureTextFields["Password"]
         let loginButton = app.buttons["LOGIN"]
         
-        accountTextField.tap()
-        accountTextField.typeText("a")
-        
         pwTextField.tap()
-        pwTextField.typeText("a")
-        pwTextField.typeText("\n")
+        pwTextField.typeText("Asd1234567")
         
+        // 隨意英文數字
+        accountTextField.tap()
+        accountTextField.typeText("a123")
         loginButton.tap()
         sleep(1)
-        
         let alertButton = app.buttons["OK"]
         alertButton.tap()
+        
+        // 超出字數
+        accountTextField.tap()
+        accountTextField.clearText()
+        accountTextField.typeText("A123456789")
+        loginButton.tap()
+        sleep(1)
+        alertButton.tap()
+        
+        // 大小寫
+        accountTextField.tap()
+        accountTextField.clearText()
+        accountTextField.typeText("a123456789")
+        loginButton.tap()
+        sleep(1)
+        alertButton.tap()
+        
+        // 正確
+        accountTextField.tap()
+        accountTextField.clearText()
+        accountTextField.typeText("A12345678")
+        loginButton.tap()
         sleep(1)
     }
     
+    /// 密碼
     func testValidPassword() throws {
         let app = XCUIApplication()
         app.launch()
         
         let accountTextField = app.textFields["Account"]
+        accountTextField.tap()
+        accountTextField.typeText("A12345678")
+        
         let pwTextField = app.secureTextFields["Password"]
         let loginButton = app.buttons["LOGIN"]
         
-        accountTextField.tap()
-        accountTextField.typeText("aasda@mail.com")
-        
+        // 少英文
         pwTextField.tap()
-        pwTextField.typeText("a")
+        pwTextField.typeText("12345678")
         pwTextField.typeText("\n")
-        
         loginButton.tap()
         sleep(1)
-        
         let alertButton = app.buttons["OK"]
         alertButton.tap()
+        
+        // 少數字
+        pwTextField.tap()
+        pwTextField.clearText()
+        pwTextField.typeText("asdfsfghfhfgh")
+        pwTextField.typeText("\n")
+        loginButton.tap()
+        sleep(1)
+        alertButton.tap()
+        
+        // 英文小寫
+        pwTextField.tap()
+        pwTextField.clearText()
+        pwTextField.typeText("ASD12312121")
+        pwTextField.typeText("\n")
+        loginButton.tap()
+        sleep(1)
+        alertButton.tap()
+        
+        // 英文小寫
+        pwTextField.tap()
+        pwTextField.clearText()
+        pwTextField.typeText("asda12312121")
+        pwTextField.typeText("\n")
+        loginButton.tap()
+        sleep(1)
+        alertButton.tap()
+        
+        // 字數
+        pwTextField.tap()
+        pwTextField.clearText()
+        pwTextField.typeText("a123")
+        pwTextField.typeText("\n")
+        loginButton.tap()
+        sleep(1)
+        alertButton.tap()
+        
+        // 正確
+        pwTextField.tap()
+        pwTextField.clearText()
+        pwTextField.typeText("aA12345678")
+        pwTextField.typeText("\n")
+        loginButton.tap()
         sleep(1)
     }
     
@@ -123,7 +192,6 @@ final class DemoUITests: XCTestCase {
             alertButton.tap()
             sleep(1)
         }
-        sleep(1)
     }
     
     func testToHomePage() {
@@ -135,14 +203,32 @@ final class DemoUITests: XCTestCase {
         let loginButton = app.buttons["LOGIN"]
         
         accountTextField.tap()
-        accountTextField.typeText("asd@mail.com")
+        accountTextField.typeText("A12345678")
 
         pwTextField.tap()
-        pwTextField.typeText("asd312@dasd")
+        pwTextField.typeText("a12345678")
         pwTextField.typeText("\n")
 
         loginButton.tap()
         sleep(1)
     }
     
+}
+
+extension XCUIElement {
+    func clearText() {
+        guard let stringValue = self.value as? String else {
+            return
+        }
+        // workaround for apple bug
+        if let placeholderString = self.placeholderValue, placeholderString == stringValue {
+            return
+        }
+
+        var deleteString = String()
+        for _ in stringValue {
+            deleteString += XCUIKeyboardKey.delete.rawValue
+        }
+        typeText(deleteString)
+    }
 }
