@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "title": "道瓊",
+        "totalIndices": 36577.9,
+        "todayIndices": 0.5
+    },
+    {
+        "id": 2,
+        "title": "標普",
+        "totalIndices": 36577.9,
+        "todayIndices": 0.5
+    },
+    {
+        "id": 3,
+        "title": "黃金",
+        "totalIndices": 36577.9,
+        "todayIndices": 0.5
+    },
+    {
+        "id": 4,
+        "title": "台幣",
+        "totalIndices": 32.5,
+        "todayIndices": -0.5
+    },
+    {
+        "id": 5,
+        "title": "上證",
+        "totalIndices": 3003.4,
+        "todayIndices": -0.5
+    },
+    {
+        "id": 1,
+        "title": "道瓊",
+        "totalIndices": 36577.9,
+        "todayIndices": 0.5
+    },
+    {
+        "id": 2,
+        "title": "標普",
+        "totalIndices": 36577.9,
+        "todayIndices": 0.5
+    },
+    {
+        "id": 3,
+        "title": "黃金",
+        "totalIndices": 36577.9,
+        "todayIndices": 0.5
+    },
+    {
+        "id": 4,
+        "title": "台幣",
+        "totalIndices": 32.5,
+        "todayIndices": -0.5
+    },
+    {
+        "id": 5,
+        "title": "上證",
+        "totalIndices": 3003.4,
+        "todayIndices": -0.5
+    }
+]

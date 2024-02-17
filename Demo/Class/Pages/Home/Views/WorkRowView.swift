@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct WorkRowView: View {
-    let appointment: Appointment
+    let appointment: AppointmentModel
     let isLast: Bool
     
-    init(appointment: Appointment, isLast: Bool) {
+    init(appointment: AppointmentModel, isLast: Bool) {
         self.appointment = appointment
         self.isLast = isLast
     }

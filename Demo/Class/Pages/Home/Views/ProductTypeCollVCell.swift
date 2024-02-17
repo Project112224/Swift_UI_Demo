@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ProductTypeCollVCell: View {
     
-    let indicesData: Indices
+    let indicesData: IndicesModel
     
     let isLast: Bool
     
-    init(indicesData: Indices, isLast: Bool) {
+    init(indicesData: IndicesModel, isLast: Bool) {
         self.indicesData = indicesData
         self.isLast = isLast
     }
@@ -53,25 +53,11 @@ struct ProductTypeCollVCell: View {
                 Divider()
             }
         }.frame(height: 56)
-        
-        //.background(Color.red)
-        
-        /*
-        Image(ImageName.launchCubcLogoIcon)
-            .resizable()
-            .aspectRatio(contentMode: .fill)
-            .frame(width: (UIScreen.main.bounds.width * 105) / 414, height: (UIScreen.main.bounds.width * 105) / 414)
-            .cornerRadius(10)
-         */
     }
 }
 
 struct ProductTypeCollVCell_Previews: PreviewProvider {
     static var previews: some View {
-        ProductTypeCollVCell(indicesData: Indices(id: 1, title: "", totalIndices: 0, todayIndices: 0), isLast: true).frame(width: 145, height: 56)
-        /*
-        ProductTypeCollVCell()
-            .previewLayout(.fixed(width: (UIScreen.main.bounds.width * 105) / 414, height: (UIScreen.main.bounds.width * 105) / 414))
-         */
+        ProductTypeCollVCell(indicesData: IndicesModel(id: 1, title: "", totalIndices: 0, todayIndices: 0), isLast: true).frame(width: 145, height: 56)
     }
 }

@@ -8,21 +8,11 @@
 import SwiftUI
 
 struct TabbarViewController: View {
-    @State private var selectedView = 0
     
-    init() {
-        //UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().isTranslucent = true
-        UINavigationBar.appearance().tintColor = .black
-        UINavigationBar.appearance().backgroundColor = .clear
-        UITabBar.appearance().backgroundColor = .clear
-        UITabBar.appearance().barTintColor = .clear
-    }
+    @State private var vm: TabbarViewModel = .init()
     
     var body: some View {
-
-        TabView(selection: $selectedView) {
+        TabView(selection: $vm.selectedView) {
             HomeViewController().tag(0)
             EmptyView().tag(1)
             EmptyView().tag(2)
@@ -44,14 +34,26 @@ struct TabbarViewController: View {
         .toolbarColorScheme(.none, for: .tabBar)
         .toolbarBackground(.hidden, for: .tabBar)
         .toolbarBackground(.clear, for: .tabBar)
+        .onAppear {
+            UINavigationBar.appearance().shadowImage = UIImage()
+            UINavigationBar.appearance().isTranslucent = true
+            UINavigationBar.appearance().tintColor = .black
+            UINavigationBar.appearance().backgroundColor = .clear
+            UITabBar.appearance().backgroundColor = .clear
+            UITabBar.appearance().barTintColor = .clear
+        }
 
         ZStack {
             HStack(spacing: (UIScreen.main.bounds.width * 41.71) / 820) {
                 ForEach((TabbedItems.allCases), id: \.self){ item in
                     Button{
-                        selectedView = item.rawValue
+                        vm.selectedView = item.rawValue
                     } label: {
-                        CustomTabItem(imageName: item.iconName, title: item.title, isActive: (selectedView == item.rawValue))
+                        CustomTabItem(
+                            imageName: item.iconName,
+                            title: item.title,
+                            isActive: (vm.selectedView == item.rawValue)
+                        )
                     }
                 }
             }
@@ -63,12 +65,11 @@ struct TabbarViewController: View {
 extension TabbarViewController {
     func CustomTabItem(imageName: String, title: String, isActive: Bool) -> some View{
         VStack(spacing: 10) {
-            if (isActive) {
-                Rectangle()
-                    .frame(width: 40, height: 4)
-                    .foregroundColor(Colors.greenLine)
-                
-            }
+            
+            Rectangle()
+                .frame(width: 40, height: 4)
+                .foregroundColor(isActive ? Colors.greenLine : .clear)
+            
             Image(imageName)
                 .resizable()
                 .renderingMode(.template)

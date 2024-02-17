@@ -15,7 +15,6 @@ enum CommonSectionViewType {
 
 struct CommonSectionView: View {
     
-    @ObservedObject var viewModel: HomeViewModel
     var type: CommonSectionViewType
     
     var body: some View {
@@ -121,6 +120,6 @@ struct CommonSectionView: View {
 
 
 #Preview {
-    CommonSectionView(viewModel: HomeViewModel(), type: .work)
+    CommonSectionView(type: .work)
 }
 

@@ -12,14 +12,7 @@ struct LoginViewController: View {
     @EnvironmentObject var router: Router
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
 
-    @State private var account: String = ""
-    @State private var password: String = ""
-    @State private var alertMsg: String = ""
-    @State private var showAlert: Bool = false
-    @State private var statusBarHeight: CGFloat = 0
-    @State private var isLock: Bool = false
-    @State private var viewModel: LoginViewModel?
-    @State private var errorCount: Int = 0
+    @State var vm: LoginViewModel = .init()
     
     var body: some View {
         ZStack {
@@ -35,7 +28,7 @@ struct LoginViewController: View {
             Title()
                 .position(CGPoint(
                     x: UIScreen.main.bounds.width - 163.69,
-                    y: 12.0 + statusBarHeight
+                    y: 12.0 + self.getStatusBarHeight()
                 ))
             
             VStack {
@@ -52,7 +45,7 @@ struct LoginViewController: View {
                                 .padding(.leading, (UIScreen.main.bounds.width * 20) / 414)
                                 .frame(height: (UIScreen.main.bounds.width * 40) / 414)
 
-                            TextField("Account", text: $account)
+                            TextField("Account", text: $vm.account)
                                 .frame(height: (UIScreen.main.bounds.width * 40) / 414, alignment: .center)
                                 .padding(.leading, (UIScreen.main.bounds.width * 10) / 414)
                                 .padding(.trailing, (UIScreen.main.bounds.width * 10) / 414)
@@ -74,7 +67,7 @@ struct LoginViewController: View {
                                 .padding(.leading, (UIScreen.main.bounds.width * 15) / 414)
                                 .frame(height: (UIScreen.main.bounds.width * 40) / 414)
                             
-                            SecureField("Password", text: $password)
+                            SecureField("Password", text: $vm.password)
                                 .frame(height: (UIScreen.main.bounds.width * 40) / 414, alignment: .center)
                                 .padding(.leading, (UIScreen.main.bounds.width * 10) / 414)
                                 .padding(.trailing, (UIScreen.main.bounds.width * 10) / 414)
@@ -89,13 +82,15 @@ struct LoginViewController: View {
                     VStack {
                         Spacer().frame(height: 20)
                         Button(action: {
-//                            let message = viewModel?.valid(account: self.account, password: self.password)
+//                            let message = vm.valid(account: vm.account, password: vm.password)
 //                            if message == nil {
-//                                
+//                                router.navigate(to: .homePage)
 //                            } else {
 //                                self.callAlert(message: message ?? "")
 //                            }
-                            router.navigate(to: .homePage)
+                            DispatchQueue.main.async {
+                                router.navigate(to: .homePage)
+                            }
                         }) {
                             ButtonWithBackground(btnText: "LOGIN")
                         }
@@ -104,32 +99,36 @@ struct LoginViewController: View {
                     }
                 }
             }
-            if (showAlert) {
+            if (vm.showAlert) {
                 CustomAlert(
-                    presentAlert: $showAlert,
+                    presentAlert: $vm.showAlert,
                     alertType: .custom(
                         title: "",
-                        message: self.alertMsg,
+                        message: vm.alertMsg,
                         rightActionText: "OK"
                     ),
-                    messageColor: isLock ? Color.red : Color.black,
+                    messageColor: vm.isLock ? Color.red : Color.black,
                     rightButtonAction:  {
-                        self.alertMsg = ""
+                        vm.alertMsg = ""
                     }
                 )
             }
-        }.onAppear {
-            let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
-            statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-            viewModel = LoginViewModel(errorCount: $errorCount)
         }
     }
     
+    
+}
+
+extension LoginViewController {
+    
+    fileprivate func getStatusBarHeight() -> CGFloat {
+        let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+        return window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+    }
+    
     fileprivate func callAlert(message: String) {
-        self.isLock = self.errorCount >= 4
-        self.alertMsg = message
-        self.errorCount += 1
-        self.showAlert.toggle()
+        vm.countErrorNumber(message: message)
+        vm.showAlert.toggle()
     }
 }
 

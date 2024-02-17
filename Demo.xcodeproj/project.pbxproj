@@ -12,7 +12,6 @@
 		BCC629372B735787009CC707 /* ProductTypeCollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC629362B735787009CC707 /* ProductTypeCollView.swift */; };
 		BCC629392B7357A4009CC707 /* ProductTypeCollVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC629382B7357A4009CC707 /* ProductTypeCollVCell.swift */; };
 		BCDB75D22B71D2FF00EF5241 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDB75D12B71D2FF00EF5241 /* HomeViewController.swift */; };
-		BCDB75D62B7203C000EF5241 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDB75D52B7203C000EF5241 /* HomeModel.swift */; };
 		BCDB75D92B7204E300EF5241 /* WorkRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDB75D82B7204E300EF5241 /* WorkRowView.swift */; };
 		BCDB75DB2B7206CC00EF5241 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDB75DA2B7206CC00EF5241 /* HomeViewModel.swift */; };
 		BCDB75DF2B72099000EF5241 /* CommonSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDB75DE2B72099000EF5241 /* CommonSectionView.swift */; };
@@ -41,6 +40,12 @@
 		F9E1112D2B7F62A300DE2E04 /* TabbarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1112C2B7F62A300DE2E04 /* TabbarItems.swift */; };
 		F9E111302B7F649B00DE2E04 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1112F2B7F649B00DE2E04 /* EmptyView.swift */; };
 		F9E111322B803C9300DE2E04 /* HomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E111312B803C9300DE2E04 /* HomeUITests.swift */; };
+		F9E111352B8084DE00DE2E04 /* TabbarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E111342B8084DE00DE2E04 /* TabbarViewModel.swift */; };
+		F9E111382B808AC700DE2E04 /* indices_datas.json in Resources */ = {isa = PBXBuildFile; fileRef = F9E111362B808AC700DE2E04 /* indices_datas.json */; };
+		F9E111392B808AC700DE2E04 /* appointments.json in Resources */ = {isa = PBXBuildFile; fileRef = F9E111372B808AC700DE2E04 /* appointments.json */; };
+		F9E111412B808B4800DE2E04 /* ChartDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1113E2B808B4800DE2E04 /* ChartDataModel.swift */; };
+		F9E111422B808B4800DE2E04 /* IndicesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1113F2B808B4800DE2E04 /* IndicesModel.swift */; };
+		F9E111432B808B4800DE2E04 /* AppointmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E111402B808B4800DE2E04 /* AppointmentModel.swift */; };
 		F9EFD32C2B71FD1700C8A99A /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EFD32B2B71FD1700C8A99A /* LoginUITests.swift */; };
 		F9EFD34B2B72164800C8A99A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9EFD34A2B72164800C8A99A /* LaunchScreen.storyboard */; };
 		F9EFD3552B7D9DC700C8A99A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EFD3542B7D9DC700C8A99A /* LoginViewController.swift */; };
@@ -63,7 +68,6 @@
 		BCC629362B735787009CC707 /* ProductTypeCollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTypeCollView.swift; sourceTree = "<group>"; };
 		BCC629382B7357A4009CC707 /* ProductTypeCollVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTypeCollVCell.swift; sourceTree = "<group>"; };
 		BCDB75D12B71D2FF00EF5241 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		BCDB75D52B7203C000EF5241 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		BCDB75D82B7204E300EF5241 /* WorkRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkRowView.swift; sourceTree = "<group>"; };
 		BCDB75DA2B7206CC00EF5241 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		BCDB75DE2B72099000EF5241 /* CommonSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonSectionView.swift; sourceTree = "<group>"; };
@@ -94,6 +98,12 @@
 		F9E1112C2B7F62A300DE2E04 /* TabbarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarItems.swift; sourceTree = "<group>"; };
 		F9E1112F2B7F649B00DE2E04 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		F9E111312B803C9300DE2E04 /* HomeUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeUITests.swift; sourceTree = "<group>"; };
+		F9E111342B8084DE00DE2E04 /* TabbarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewModel.swift; sourceTree = "<group>"; };
+		F9E111362B808AC700DE2E04 /* indices_datas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = indices_datas.json; sourceTree = "<group>"; };
+		F9E111372B808AC700DE2E04 /* appointments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = appointments.json; sourceTree = "<group>"; };
+		F9E1113E2B808B4800DE2E04 /* ChartDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartDataModel.swift; sourceTree = "<group>"; };
+		F9E1113F2B808B4800DE2E04 /* IndicesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicesModel.swift; sourceTree = "<group>"; };
+		F9E111402B808B4800DE2E04 /* AppointmentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentModel.swift; sourceTree = "<group>"; };
 		F9EFD32B2B71FD1700C8A99A /* LoginUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
 		F9EFD34A2B72164800C8A99A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9EFD3542B7D9DC700C8A99A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -129,7 +139,9 @@
 		BCDB75D32B7203A000EF5241 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BCDB75D52B7203C000EF5241 /* HomeModel.swift */,
+				F9E111402B808B4800DE2E04 /* AppointmentModel.swift */,
+				F9E1113E2B808B4800DE2E04 /* ChartDataModel.swift */,
+				F9E1113F2B808B4800DE2E04 /* IndicesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -350,6 +362,8 @@
 		F9E111222B7F3C0000DE2E04 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				F9E111372B808AC700DE2E04 /* appointments.json */,
+				F9E111362B808AC700DE2E04 /* indices_datas.json */,
 				F9E111232B7F3C0000DE2E04 /* chart.json */,
 			);
 			path = Data;
@@ -358,6 +372,7 @@
 		F9E111272B7F626800DE2E04 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
+				F9E111332B8084D100DE2E04 /* ViewModel */,
 				F9E1112B2B7F628B00DE2E04 /* Modules */,
 				F9E111282B7F626800DE2E04 /* ViewController */,
 			);
@@ -386,6 +401,14 @@
 				F9E1112F2B7F649B00DE2E04 /* EmptyView.swift */,
 			);
 			path = Empty;
+			sourceTree = "<group>";
+		};
+		F9E111332B8084D100DE2E04 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F9E111342B8084DE00DE2E04 /* TabbarViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		F9EFD3492B72163500C8A99A /* Launch */ = {
@@ -479,6 +502,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9E111382B808AC700DE2E04 /* indices_datas.json in Resources */,
+				F9E111392B808AC700DE2E04 /* appointments.json in Resources */,
 				F9E111242B7F3C0000DE2E04 /* chart.json in Resources */,
 				F9EFD34B2B72164800C8A99A /* LaunchScreen.storyboard in Resources */,
 				F9A94A412B71B90A0062F68A /* Preview Assets.xcassets in Resources */,
@@ -502,16 +527,20 @@
 			files = (
 				BCC629392B7357A4009CC707 /* ProductTypeCollVCell.swift in Sources */,
 				BCDB75DB2B7206CC00EF5241 /* HomeViewModel.swift in Sources */,
+				F9E111422B808B4800DE2E04 /* IndicesModel.swift in Sources */,
 				F9A94A602B71BB1D0062F68A /* Router.swift in Sources */,
 				F9A94A782B71C3570062F68A /* Colors.swift in Sources */,
 				BCC629352B735612009CC707 /* PickerControlView.swift in Sources */,
 				F9E1112A2B7F626800DE2E04 /* TabbarViewController.swift in Sources */,
 				F9E1112D2B7F62A300DE2E04 /* TabbarItems.swift in Sources */,
 				BCDB75D92B7204E300EF5241 /* WorkRowView.swift in Sources */,
+				F9E111352B8084DE00DE2E04 /* TabbarViewModel.swift in Sources */,
 				F9EFD3592B7D9E6A00C8A99A /* LoginViewModel.swift in Sources */,
 				F9A94A7F2B71C8350062F68A /* ImageName.swift in Sources */,
 				F9E1111D2B7E129400DE2E04 /* RateChartView.swift in Sources */,
+				F9E111412B808B4800DE2E04 /* ChartDataModel.swift in Sources */,
 				F94ABB1C2B7DB3EF003D6466 /* CustomAlert.swift in Sources */,
+				F9E111432B808B4800DE2E04 /* AppointmentModel.swift in Sources */,
 				BCDB75DF2B72099000EF5241 /* CommonSectionView.swift in Sources */,
 				F9E111262B7F3C1600DE2E04 /* APIConfig.swift in Sources */,
 				F9A94A3A2B71B9080062F68A /* DemoApp.swift in Sources */,
@@ -520,7 +549,6 @@
 				F9A94A7D2B71C4D00062F68A /* Extension.swift in Sources */,
 				BCC629332B730F24009CC707 /* DateControlView.swift in Sources */,
 				F9A94A752B71C30D0062F68A /* Seperator.swift in Sources */,
-				BCDB75D62B7203C000EF5241 /* HomeModel.swift in Sources */,
 				BCC629372B735787009CC707 /* ProductTypeCollView.swift in Sources */,
 				BCDB75E12B72293E00EF5241 /* SegmentControlView.swift in Sources */,
 				F94ABB1D2B7DB3EF003D6466 /* Title.swift in Sources */,

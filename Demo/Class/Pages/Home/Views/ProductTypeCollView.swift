@@ -9,18 +9,17 @@ import SwiftUI
 
 struct ProductTypeCollView: View {
     
-    @ObservedObject var viewModel: HomeViewModel
-    
-    init(viewModel: HomeViewModel) {
-        self.viewModel = viewModel
-    }
+    var indicesDatas: [IndicesModel]
     
     var body: some View {
         
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                ForEach(viewModel.indicesDatas) { indicesData in
-                    ProductTypeCollVCell(indicesData: indicesData, isLast: viewModel.indicesDatas.last?.id == indicesData.id)
+                ForEach(indicesDatas) { indicesData in
+                    ProductTypeCollVCell(
+                        indicesData: indicesData,
+                        isLast: indicesDatas.last?.id == indicesData.id
+                    )
                 }
             }
         }
@@ -30,6 +29,6 @@ struct ProductTypeCollView: View {
 
 struct ProductTypeCollView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductTypeCollView(viewModel: HomeViewModel())
+        ProductTypeCollView(indicesDatas: [])
     }
 }
