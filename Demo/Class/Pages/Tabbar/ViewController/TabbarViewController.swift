@@ -41,6 +41,9 @@ struct TabbarViewController: View {
             UINavigationBar.appearance().backgroundColor = .clear
             UITabBar.appearance().backgroundColor = .clear
             UITabBar.appearance().barTintColor = .clear
+            let appearance = UITabBarAppearance()
+            appearance.configureWithTransparentBackground()
+            UITabBar.appearance().standardAppearance = appearance
         }
 
         ZStack {

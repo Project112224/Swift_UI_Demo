@@ -23,6 +23,7 @@ struct DateControlView: View {
                     .background(Color.clear)
             }
             .buttonStyle(BorderlessButtonStyle())
+            .accessibilityIdentifier("date_left")
             
             ZStack {
                 Text(dateFormat())
@@ -46,6 +47,7 @@ struct DateControlView: View {
                     .background(Color.clear)
             }
             .buttonStyle(BorderlessButtonStyle())
+            .accessibilityIdentifier("date_right")
         }
     }
     

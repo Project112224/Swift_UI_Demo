@@ -32,33 +32,44 @@ final class HomeUITests: XCTestCase {
         app.launch()
         
         let accountTextField = app.textFields["Account"]
-        XCTAssert(accountTextField.exists)
         let pwTextField = app.secureTextFields["Password"]
-        XCTAssert(pwTextField.exists)
         let loginButton = app.buttons["LOGIN"]
-        XCTAssert(loginButton.exists)
-        
-        loginButton.tap()
-        sleep(2)
         
         accountTextField.tap()
-        accountTextField.typeText("b")
-        accountTextField.typeText("\n")
+        accountTextField.typeText("A12345678")
+        
+        pwTextField.tap()
+        pwTextField.typeText("bA1231213121")
+        pwTextField.typeText("\n")
         
         loginButton.tap()
         sleep(1)
         
-        pwTextField.tap()
-        pwTextField.typeText("b")
-        pwTextField.typeText("\n")
+        // 首頁
+        let projectSwitch = app.buttons["代辦事項"]
+        projectSwitch.tap()
+        let accessSwitch = app.buttons["我的約訪"]
+        accessSwitch.tap()
         
-        loginButton.tap()
-        sleep(2)
+        let tableSwitch = app.buttons["數據表"]
+        tableSwitch.tap()
+        let chartSwitch = app.buttons["走勢圖"]
+        chartSwitch.tap()
         
-        let alertButton = app.buttons["OK"]
-        XCTAssert(alertButton.exists)
-        alertButton.tap()
-        sleep(2)
+        let dateLeftButton = app.buttons.matching(identifier: "date_left").firstMatch
+        dateLeftButton.tap()
+        
+        let dateRightButton = app.buttons.matching(identifier: "date_right").firstMatch
+        dateRightButton.tap()
+        
+        let datePickers = app.datePickers.firstMatch
+        datePickers.tap()
+        app.swipeUp()
+        
+//        let monthPicker = app.pickers.firstMatch
+//        monthPicker.tap()
+        
+        sleep(1)
     }
     
     
