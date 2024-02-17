@@ -14,6 +14,7 @@ struct TabbarViewController: View {
     var body: some View {
         TabView(selection: $vm.selectedView) {
             HomeViewController().tag(0)
+                .ignoresSafeArea(.all, edges: [.bottom])
             EmptyView().tag(1)
             EmptyView().tag(2)
             EmptyView().tag(3)
