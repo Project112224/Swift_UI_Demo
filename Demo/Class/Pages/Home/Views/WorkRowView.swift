@@ -22,23 +22,23 @@ struct WorkRowView: View {
                 //index
                 Text(String(appointment.id))
                     .font(.system(size: 14))
-                    .frame(width: 20, alignment: .center)
+                    .frame(width: (UIScreen.main.bounds.width * 20) / 820, alignment: .center)
                 // 時間
                 Text(appointment.time)
                     .font(.system(size: 14))
-                    .frame(width: 80, alignment: .leading)
+                    .frame(width: (UIScreen.main.bounds.width * 80) / 820, alignment: .leading)
                 // 客戶
                 Text(appointment.client)
                     .font(.system(size: 14))
-                    .frame(width: 86, alignment: .leading)
+                    .frame(width: (UIScreen.main.bounds.width * 86) / 820, alignment: .leading)
                 // 類別
                 Text(appointment.category)
                     .font(.system(size: 14))
-                    .frame(width: 121, alignment: .leading)
+                    .frame(width: (UIScreen.main.bounds.width * 121) / 820, alignment: .leading)
                 // 地點
                 Text(appointment.location)
                     .font(.system(size: 14))
-                    .frame(width: 121, alignment: .leading)
+                    .frame(width: (UIScreen.main.bounds.width * 121) / 820, alignment: .leading)
                     .lineLimit(1)
                 // 視圖
                 Button(action: {
@@ -49,7 +49,7 @@ struct WorkRowView: View {
                         .background(Color.clear)
                 }
                 .buttonStyle(BorderlessButtonStyle())
-                .frame(width: 40, alignment: .center)
+                .frame(width: (UIScreen.main.bounds.width * 40) / 820, alignment: .center)
                 // 註記
                 Button(action: {
 
@@ -59,7 +59,7 @@ struct WorkRowView: View {
                         .background(Color.clear)
                 }
                 .buttonStyle(BorderlessButtonStyle())
-                .frame(width: 40, alignment: .center)
+                .frame(width: (UIScreen.main.bounds.width * 40) / 820, alignment: .center)
                 //互動紀錄
                 Button(action: {
 
@@ -75,7 +75,7 @@ struct WorkRowView: View {
                     .frame(alignment: .center)
                 }
                 .buttonStyle(BorderlessButtonStyle())
-                .frame(width: 60, alignment: .center)
+                .frame(width: (UIScreen.main.bounds.width * 60) / 820, alignment: .center)
                 //約訪
                 //Text(appointment.access).frame(width: UIScreen.main.bounds.width * 0.07, alignment: .leading)
                 Button(action: {
@@ -86,7 +86,7 @@ struct WorkRowView: View {
                         .background(Color.clear)
                 }
                 .buttonStyle(BorderlessButtonStyle())
-                .frame(width: 60, alignment: .center)
+                .frame(width: (UIScreen.main.bounds.width * 60) / 820, alignment: .center)
                 
             }
             .listRowBackground(Color.white)

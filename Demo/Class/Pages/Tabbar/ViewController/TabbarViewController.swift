@@ -46,7 +46,7 @@ struct TabbarViewController: View {
         .toolbarBackground(.clear, for: .tabBar)
 
         ZStack {
-            HStack(spacing: 41.71) {
+            HStack(spacing: (UIScreen.main.bounds.width * 41.71) / 820) {
                 ForEach((TabbedItems.allCases), id: \.self){ item in
                     Button{
                         selectedView = item.rawValue
