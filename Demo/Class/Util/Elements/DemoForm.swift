@@ -14,7 +14,7 @@ struct DemoForm<Content: View>: View {
     
     var body: some View {
         ZStack {
-            VStack(spacing: 0) {
+            VStack(spacing: 8) {
                 content
             }
             .padding(.horizontal, 16)

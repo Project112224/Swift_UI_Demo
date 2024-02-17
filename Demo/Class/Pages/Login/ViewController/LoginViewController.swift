@@ -15,108 +15,77 @@ struct LoginViewController: View {
     @State var vm: LoginViewModel = .init()
     
     var body: some View {
-        ZStack {
-            
-            Image(ImageName.imgBackgroundHome)
-                .resizable()
-                .edgesIgnoringSafeArea(.all)
-                .frame(
-                    width: UIScreen.main.bounds.width,
-                    height: UIScreen.main.bounds.height
-                )
+        GeometryReader { geometry in
+            ZStack {
+                Image(ImageName.imgBackgroundHome)
+                    .resizable()
+                    .edgesIgnoringSafeArea(.all)
+                    .frame(
+                        width: geometry.size.width,
+                        height: geometry.size.height
+                    )
 
-            Title()
-                .position(CGPoint(
-                    x: UIScreen.main.bounds.width - 163.69,
-                    y: 12.0 + self.getStatusBarHeight()
-                ))
-            
-            VStack {
-                VStack {
+                Title()
+                    .position(CGPoint(
+                        x: geometry.size.width - 163.69,
+                        y: 12.0 + self.getStatusBarHeight()
+                    ))
+                
+                VStack(alignment: .center) {
                     VStack {
-                        Spacer(minLength: (UIScreen.main.bounds.width * 15) / 414)
+                        Spacer(minLength: (geometry.size.width * 15) / 414)
                         RoundedImage()
                     }
-                    VStack {
-                        HStack {
-                            Image(ImageName.icAccount)
-                                .renderingMode(.template)
-                                .foregroundColor(Colors.green500)
-                                .padding(.leading, (UIScreen.main.bounds.width * 20) / 414)
-                                .frame(height: (UIScreen.main.bounds.width * 40) / 414)
-
-                            TextField("Account", text: $vm.account)
-                                .frame(height: (UIScreen.main.bounds.width * 40) / 414, alignment: .center)
-                                .padding(.leading, (UIScreen.main.bounds.width * 10) / 414)
-                                .padding(.trailing, (UIScreen.main.bounds.width * 10) / 414)
-                                .font(.system(size: (UIScreen.main.bounds.width * 15) / 414, weight: .regular, design: .default))
-                                .imageScale(.small)
-                                .keyboardType(.emailAddress)
-                                .autocapitalization(UITextAutocapitalizationType.none)
-                        }
-                        Seperator(color: Colors.green500)
-                    }.frame(width: UIScreen.main.bounds.width * 0.8)
+                    LoginTextFiled(
+                        hintText: "Account",
+                        icon: ImageName.icAccount,
+                        text: $vm.account
+                    ).frame(width: geometry.size.width * 0.8, height: 100)
                     
-                    Spacer(minLength: (UIScreen.main.bounds.width * 15) / 414)
+                    Spacer(minLength: (geometry.size.width * 15) / 414)
                     
-                    VStack {
-                        HStack {
-                            Image(ImageName.icPassword)
-                                .renderingMode(.template)
-                                .foregroundColor(Colors.green500)
-                                .padding(.leading, (UIScreen.main.bounds.width * 15) / 414)
-                                .frame(height: (UIScreen.main.bounds.width * 40) / 414)
-                            
-                            SecureField("Password", text: $vm.password)
-                                .frame(height: (UIScreen.main.bounds.width * 40) / 414, alignment: .center)
-                                .padding(.leading, (UIScreen.main.bounds.width * 10) / 414)
-                                .padding(.trailing, (UIScreen.main.bounds.width * 10) / 414)
-                                .font(.system(size: (UIScreen.main.bounds.width * 15) / 414, weight: .regular, design: .default))
-                                .imageScale(.small)
-                        }
-                        Seperator(color: Colors.green500)
-                    }.frame(width: UIScreen.main.bounds.width * 0.8)
+                    LoginTextFiled(
+                        hintText: "Password",
+                        icon: ImageName.icPassword,
+                        text: $vm.password
+                    ).frame(width: geometry.size.width * 0.8, height: 100)
                     
-                    Spacer(minLength: (UIScreen.main.bounds.width * 15) / 414)
+                    Spacer(minLength: (geometry.size.width * 15) / 414)
                     
                     VStack {
                         Spacer().frame(height: 20)
                         Button(action: {
-//                            let message = vm.valid(account: vm.account, password: vm.password)
-//                            if message == nil {
-//                                router.navigate(to: .homePage)
-//                            } else {
-//                                self.callAlert(message: message ?? "")
-//                            }
-                            DispatchQueue.main.async {
+                            let message = vm.valid(account: vm.account, password: vm.password)
+                            if message == nil {
                                 router.navigate(to: .homePage)
+                            } else {
+                                self.callAlert(message: message ?? "")
                             }
                         }) {
                             ButtonWithBackground(btnText: "LOGIN")
+                                .frame(width: geometry.size.width * 0.8, height: 40)
                         }
                         
-                        Spacer(minLength: (UIScreen.main.bounds.width * 15) / 414)
+                        Spacer(minLength: (geometry.size.width * 15) / 414)
                     }
                 }
-            }
-            if (vm.showAlert) {
-                CustomAlert(
-                    presentAlert: $vm.showAlert,
-                    alertType: .custom(
-                        title: "",
-                        message: vm.alertMsg,
-                        rightActionText: "OK"
-                    ),
-                    messageColor: vm.isLock ? Color.red : Color.black,
-                    rightButtonAction:  {
-                        vm.alertMsg = ""
-                    }
-                )
+                if (vm.showAlert) {
+                    CustomAlert(
+                        presentAlert: $vm.showAlert,
+                        alertType: .custom(
+                            title: "",
+                            message: vm.alertMsg,
+                            rightActionText: "OK"
+                        ),
+                        messageColor: vm.isLock ? Color.red : Color.black,
+                        rightButtonAction:  {
+                            vm.alertMsg = ""
+                        }
+                    )
+                }
             }
         }
     }
-    
-    
 }
 
 extension LoginViewController {

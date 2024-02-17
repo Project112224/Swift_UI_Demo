@@ -18,6 +18,7 @@ struct HomeViewController: View {
                 VStack(spacing: 16) {
                     DemoForm {
                         CommonSectionView(type: .work)
+                            .padding(.bottom, 8)
                         CustomHeaderView()
                         Divider()
                         ForEach(vm.appointments) { appointment in

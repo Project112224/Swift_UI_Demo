@@ -12,16 +12,21 @@ struct ButtonWithBackground: View {
     var btnText: String
     
     var body: some View {
-        
-        HStack {
-            Text(btnText)
-                .font(.headline)
-                .foregroundColor(.white)
-                .padding()
-                .frame(width: UIScreen.main.bounds.width * 0.8, height: 50)
-                .background(Colors.green500)
-                .clipped()
-                .cornerRadius(50.0)
+        GeometryReader { geometry in
+            HStack {
+                Text(btnText)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Colors.green500)
+                    .clipped()
+                    .cornerRadius(50.0)
+            }
         }
     }
+}
+
+#Preview {
+    ButtonWithBackground(btnText: "test")
 }

@@ -46,6 +46,7 @@
 		F9E111412B808B4800DE2E04 /* ChartDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1113E2B808B4800DE2E04 /* ChartDataModel.swift */; };
 		F9E111422B808B4800DE2E04 /* IndicesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1113F2B808B4800DE2E04 /* IndicesModel.swift */; };
 		F9E111432B808B4800DE2E04 /* AppointmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E111402B808B4800DE2E04 /* AppointmentModel.swift */; };
+		F9E111452B809C1200DE2E04 /* LoginTextFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E111442B809C1200DE2E04 /* LoginTextFiled.swift */; };
 		F9EFD32C2B71FD1700C8A99A /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EFD32B2B71FD1700C8A99A /* LoginUITests.swift */; };
 		F9EFD34B2B72164800C8A99A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9EFD34A2B72164800C8A99A /* LaunchScreen.storyboard */; };
 		F9EFD3552B7D9DC700C8A99A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EFD3542B7D9DC700C8A99A /* LoginViewController.swift */; };
@@ -104,6 +105,7 @@
 		F9E1113E2B808B4800DE2E04 /* ChartDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartDataModel.swift; sourceTree = "<group>"; };
 		F9E1113F2B808B4800DE2E04 /* IndicesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicesModel.swift; sourceTree = "<group>"; };
 		F9E111402B808B4800DE2E04 /* AppointmentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentModel.swift; sourceTree = "<group>"; };
+		F9E111442B809C1200DE2E04 /* LoginTextFiled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextFiled.swift; sourceTree = "<group>"; };
 		F9EFD32B2B71FD1700C8A99A /* LoginUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
 		F9EFD34A2B72164800C8A99A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9EFD3542B7D9DC700C8A99A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 				F9A94A722B71C2A30062F68A /* RoundedImage.swift */,
 				F9A94A742B71C30D0062F68A /* Seperator.swift */,
 				F9A94A792B71C44F0062F68A /* ButtonWithBackground.swift */,
+				F9E111442B809C1200DE2E04 /* LoginTextFiled.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				F9A94A702B71BEC00062F68A /* CustomHeaderView.swift in Sources */,
 				F9A94A732B71C2A30062F68A /* RoundedImage.swift in Sources */,
 				F9A94A7D2B71C4D00062F68A /* Extension.swift in Sources */,
+				F9E111452B809C1200DE2E04 /* LoginTextFiled.swift in Sources */,
 				BCC629332B730F24009CC707 /* DateControlView.swift in Sources */,
 				F9A94A752B71C30D0062F68A /* Seperator.swift in Sources */,
 				BCC629372B735787009CC707 /* ProductTypeCollView.swift in Sources */,

@@ -47,21 +47,24 @@ struct TabbarViewController: View {
         }
 
         ZStack {
-            HStack(spacing: (UIScreen.main.bounds.width * 41.71) / 820) {
-                ForEach((TabbedItems.allCases), id: \.self){ item in
-                    Button{
-                        vm.selectedView = item.rawValue
-                    } label: {
-                        CustomTabItem(
-                            imageName: item.iconName,
-                            title: item.title,
-                            isActive: (vm.selectedView == item.rawValue)
-                        )
+            GeometryReader { geometry in
+                HStack(spacing: (geometry.size.width * 41.71) / 820) {
+                    ForEach((TabbedItems.allCases), id: \.self){ item in
+                        Button{
+                            vm.selectedView = item.rawValue
+                        } label: {
+                            CustomTabItem(
+                                imageName: item.iconName,
+                                title: item.title,
+                                isActive: (vm.selectedView == item.rawValue)
+                            )
+                        }
                     }
                 }
+                .frame(width: geometry.size.width)
             }
-            .frame(width: UIScreen.main.bounds.width)
         }.background(.clear)
+            .frame(height: 80)
     }
 }
 
