@@ -15,7 +15,6 @@ struct RoundedImage: View {
            .aspectRatio(contentMode: .fill)
            .frame(width: 150, height: 150)
            .clipped()
-           .cornerRadius(150)
            .padding(.bottom, 40)
     }
 }

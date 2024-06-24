@@ -28,7 +28,7 @@ struct TabbarViewController: View {
         .navigationBarTitle("", displayMode: .inline)
         .navigationBarItems(
             leading: Header(),
-            trailing: Text("\(self.dateFormat()) 理專 蔡立方 您好").font(.system(size: 14))
+            trailing: Text("\(self.dateFormat()) 經理 王小明 您好").font(.system(size: 14))
         )
         .toolbarBackground(.visible, for: .navigationBar)
         .toolbarBackground(.white, for: .navigationBar)

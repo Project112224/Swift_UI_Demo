@@ -85,7 +85,7 @@ struct LoginViewController: View {
                         Spacer()
                     }
                 }.frame(
-                    width: geometry.size.width * 0.56,
+                    width: vm.renderInputHeight(length: geometry.size.width * 0.65),
                     height: geometry.size.height * 0.6
                 )
                 

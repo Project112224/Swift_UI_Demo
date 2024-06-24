@@ -19,6 +19,10 @@ extension LoginViewController {
         var alertMsg: String = ""
         var isLock: Bool = false
         
+        func renderInputHeight(length: Double) -> Double {
+            return length < 320 ? 320 : length
+        }
+        
         func valid(account: String, password: String) -> String? {
             
             if (self.errorCount >= 4) {
