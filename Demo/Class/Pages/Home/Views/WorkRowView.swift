@@ -22,7 +22,6 @@ struct WorkRowView: View {
                 HStack(spacing: 12) {
                     //index
                     Text(String(appointment.id))
-                        .font(.system(size: 14))
                         .frame(width: (geometry.size.width * 20) / 820, alignment: .center)
                     // 時間
                     Text(appointment.time)
@@ -103,8 +102,9 @@ struct WorkRowView: View {
         }.frame(height: 36)
     }
 }
-/*
-#Preview {
-    WorkRowView(appointment: )
-}
-*/
+
+//#Preview {
+//    WorkRowView(
+//        appointment: AppointmentModel(), isLast: false
+//    )
+//}

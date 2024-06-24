@@ -18,7 +18,7 @@
 		BCDB75E12B72293E00EF5241 /* SegmentControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDB75E02B72293E00EF5241 /* SegmentControlView.swift */; };
 		F94ABB1B2B7DB3EF003D6466 /* AlertType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94ABB182B7DB3EF003D6466 /* AlertType.swift */; };
 		F94ABB1C2B7DB3EF003D6466 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94ABB192B7DB3EF003D6466 /* CustomAlert.swift */; };
-		F94ABB1D2B7DB3EF003D6466 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94ABB1A2B7DB3EF003D6466 /* Title.swift */; };
+		F94ABB1D2B7DB3EF003D6466 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94ABB1A2B7DB3EF003D6466 /* Header.swift */; };
 		F9A94A3A2B71B9080062F68A /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A94A392B71B9080062F68A /* DemoApp.swift */; };
 		F9A94A3E2B71B90A0062F68A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9A94A3D2B71B90A0062F68A /* Assets.xcassets */; };
 		F9A94A412B71B90A0062F68A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9A94A402B71B90A0062F68A /* Preview Assets.xcassets */; };
@@ -75,7 +75,7 @@
 		BCDB75E02B72293E00EF5241 /* SegmentControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlView.swift; sourceTree = "<group>"; };
 		F94ABB182B7DB3EF003D6466 /* AlertType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertType.swift; sourceTree = "<group>"; };
 		F94ABB192B7DB3EF003D6466 /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
-		F94ABB1A2B7DB3EF003D6466 /* Title.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
+		F94ABB1A2B7DB3EF003D6466 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		F9A94A362B71B9080062F68A /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A94A392B71B9080062F68A /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
 		F9A94A3D2B71B90A0062F68A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 			children = (
 				BCDB75E02B72293E00EF5241 /* SegmentControlView.swift */,
 				F94ABB172B7DB3EF003D6466 /* Alert */,
-				F94ABB1A2B7DB3EF003D6466 /* Title.swift */,
+				F94ABB1A2B7DB3EF003D6466 /* Header.swift */,
 				F9E1111E2B7EEF9500DE2E04 /* DemoForm.swift */,
 			);
 			path = Elements;
@@ -272,7 +272,6 @@
 			isa = PBXGroup;
 			children = (
 				F9A94A5B2B71BA6B0062F68A /* ViewModel */,
-				F9A94A5C2B71BA6B0062F68A /* Modules */,
 				F9A94A5D2B71BA6B0062F68A /* ViewController */,
 				F9A94A5E2B71BA6B0062F68A /* Views */,
 			);
@@ -285,13 +284,6 @@
 				F9EFD3582B7D9E6A00C8A99A /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		F9A94A5C2B71BA6B0062F68A /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Modules;
 			sourceTree = "<group>";
 		};
 		F9A94A5D2B71BA6B0062F68A /* ViewController */ = {
@@ -555,7 +547,7 @@
 				F9A94A752B71C30D0062F68A /* Seperator.swift in Sources */,
 				BCC629372B735787009CC707 /* ProductTypeCollView.swift in Sources */,
 				BCDB75E12B72293E00EF5241 /* SegmentControlView.swift in Sources */,
-				F94ABB1D2B7DB3EF003D6466 /* Title.swift in Sources */,
+				F94ABB1D2B7DB3EF003D6466 /* Header.swift in Sources */,
 				F9A94A632B71BD770062F68A /* PageName.swift in Sources */,
 				F94ABB1B2B7DB3EF003D6466 /* AlertType.swift in Sources */,
 				F9A94A7A2B71C44F0062F68A /* ButtonWithBackground.swift in Sources */,
@@ -714,6 +706,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Demo/Preview Content\"";
+				DEVELOPMENT_TEAM = UVS55ZQ2F5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -728,7 +721,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tpi.june.Demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jetfusion.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -744,6 +737,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Demo/Preview Content\"";
+				DEVELOPMENT_TEAM = UVS55ZQ2F5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -758,7 +752,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tpi.june.Demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jetfusion.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

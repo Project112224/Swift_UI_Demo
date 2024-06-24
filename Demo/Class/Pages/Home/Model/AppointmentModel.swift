@@ -21,10 +21,23 @@ struct AppointmentModel: Identifiable, Decodable {
     var recordEnum: recordType {
         return recordType(rawValue: record) ?? .other
     }
+    
     enum recordType: String, CaseIterable {
         case file = "建檔" //建檔
         case edit = "編輯" //編輯
         case other
+    }
+    
+    init() {
+        self.id = 0
+        self.time = ""
+        self.client = ""
+        self.category = ""
+        self.location = ""
+        self.view = ""
+        self.note = ""
+        self.access = ""
+        self.record = ""
     }
     
 }

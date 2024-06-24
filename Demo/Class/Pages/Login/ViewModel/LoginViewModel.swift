@@ -22,7 +22,7 @@ extension LoginViewController {
         func valid(account: String, password: String) -> String? {
             
             if (self.errorCount >= 4) {
-                return "輸入密碼錯誤第5次已鎖定，請洽管理員"
+                return "輸入錯誤第5次已鎖定，請洽管理員"
             }
             
             if account.isEmpty || password.isEmpty {
@@ -30,11 +30,11 @@ extension LoginViewController {
             }
             
             if !account.isValidAccount {
-                return "請輸入正確帳號"
+                return "帳號或密碼錯誤"
             }
             
             if !(password.isValidPassword) {
-                return "輸入密碼錯誤"
+                return "帳號或密碼錯誤"
             }
             
             return nil
@@ -48,8 +48,3 @@ extension LoginViewController {
     }
     
 }
-
-//struct LoginViewModel {
-//    
-//    
-//}

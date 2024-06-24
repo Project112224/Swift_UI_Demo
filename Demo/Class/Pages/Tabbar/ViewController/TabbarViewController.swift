@@ -27,8 +27,8 @@ struct TabbarViewController: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle("", displayMode: .inline)
         .navigationBarItems(
-            leading: Title(),
-            trailing: Text("2023 / 12 / 11 (一) 理專 蔡立方 您好").font(.system(size: 14))
+            leading: Header(),
+            trailing: Text("\(self.dateFormat()) 理專 蔡立方 您好").font(.system(size: 14))
         )
         .toolbarBackground(.visible, for: .navigationBar)
         .toolbarBackground(.white, for: .navigationBar)
@@ -87,6 +87,27 @@ extension TabbarViewController {
                 .font(.system(size: 14))
                 .foregroundColor(isActive ? Colors.green700 : Colors.unselectedItemTintColor)
         }.frame(minWidth: 58, minHeight: 64)
+    }
+    
+    func dateFormat() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd / MM / yyyy"
+        let dateComponents = Calendar.current.dateComponents(in: TimeZone.current, from: .now)
+        let weekday = self.weekName(number: dateComponents.weekday!)
+        return "\(formatter.string(from: .now)) (\(weekday))"
+    }
+    
+    func weekName(number: Int) -> String {
+        switch (number) {
+        case 1: return "日"
+        case 2: return "一"
+        case 3: return "二"
+        case 4: return "三"
+        case 5: return "四"
+        case 6: return "五"
+        case 7: return "六"
+        default: return ""
+        }
     }
 }
 

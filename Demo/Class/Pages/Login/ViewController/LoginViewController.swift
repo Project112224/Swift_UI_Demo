@@ -14,6 +14,11 @@ struct LoginViewController: View {
 
     @State var vm: LoginViewModel = .init()
     
+    @ViewBuilder
+    var baseView: some View {
+        ZStack {}
+    }
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -25,22 +30,34 @@ struct LoginViewController: View {
                         height: geometry.size.height
                     )
 
-                Title()
+                Header()
                     .position(CGPoint(
                         x: geometry.size.width - 163.69,
                         y: 12.0 + self.getStatusBarHeight()
                     ))
+                    .onTapGesture {
+                        hideKeyboard()
+                    }
+                
+                Color(white: 0, opacity: 0.0001)
+                    .onTapGesture {
+                        hideKeyboard()
+                    }
                 
                 VStack(alignment: .center) {
                     VStack {
                         Spacer(minLength: (geometry.size.width * 15) / 414)
                         RoundedImage()
+                            .onTapGesture {
+                                hideKeyboard()
+                            }
                     }
+                    
                     LoginTextFiled(
                         hintText: "Account",
                         icon: ImageName.icAccount,
                         text: $vm.account
-                    ).frame(width: geometry.size.width * 0.8, height: 100)
+                    ).frame(height: geometry.size.height / 20)
                     
                     Spacer(minLength: (geometry.size.width * 15) / 414)
                     
@@ -48,12 +65,12 @@ struct LoginViewController: View {
                         hintText: "Password",
                         icon: ImageName.icPassword,
                         text: $vm.password
-                    ).frame(width: geometry.size.width * 0.8, height: 100)
+                    ).frame(height: geometry.size.height / 20)
                     
                     Spacer(minLength: (geometry.size.width * 15) / 414)
                     
                     VStack {
-                        Spacer().frame(height: 20)
+                        Spacer()
                         Button(action: {
                             let message = vm.valid(account: vm.account, password: vm.password)
                             if message == nil {
@@ -63,12 +80,15 @@ struct LoginViewController: View {
                             }
                         }) {
                             ButtonWithBackground(btnText: "LOGIN")
-                                .frame(width: geometry.size.width * 0.8, height: 40)
+                                .frame(height: 40)
                         }
-                        
-                        Spacer(minLength: (geometry.size.width * 15) / 414)
+                        Spacer()
                     }
-                }
+                }.frame(
+                    width: geometry.size.width * 0.56,
+                    height: geometry.size.height * 0.6
+                )
+                
                 if (vm.showAlert) {
                     CustomAlert(
                         presentAlert: $vm.showAlert,
@@ -84,7 +104,7 @@ struct LoginViewController: View {
                     )
                 }
             }
-        }
+        }.edgesIgnoringSafeArea(.all)
     }
 }
 
@@ -99,6 +119,14 @@ extension LoginViewController {
         vm.countErrorNumber(message: message)
         vm.showAlert.toggle()
     }
+}
+
+extension LoginViewController {
+#if canImport(UIKit)
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+#endif
 }
 
 #Preview {

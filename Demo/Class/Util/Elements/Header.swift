@@ -1,5 +1,5 @@
 //
-//  Title.swift
+//  Header.swift
 //  Demo
 //
 //  Created by --- on 2024/2/6.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Title: View {
+struct Header: View {
     var body: some View {
         HStack(spacing: 0) {
             Image(ImageName.titleLogo)
@@ -28,5 +28,5 @@ struct Title: View {
 }
 
 #Preview {
-    Title()
+    Header()
 }
