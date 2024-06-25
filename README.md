@@ -8,6 +8,12 @@
 - 數字
 - 8碼以上
 
+
+## 環境
+
+OS: macOS Sonoma 14.5
+Xcode: 15.3
+
 ## 頁面
 ### 登入頁
 <img src="https://github.com/Project112224/Swift_UI_Demo/blob/main/GitImage/Login.png" width="60%">
