@@ -13,6 +13,10 @@ struct CustomAlert: View {
     
     @State var alertType: AlertType = .success
     
+    var widthOffset: Double = 0.45
+    
+    var messageAlignment: TextAlignment = .center
+    
     var isShowVerticalButtons = false
     var messageColor = Color.black
     
@@ -30,7 +34,7 @@ struct CustomAlert: View {
             
             VStack(spacing: 0) {
 
-                if alertType.title() != "" {
+                if (!alertType.title().isEmpty) {
                     Text(alertType.title())
                         .font(.system(size: 16, weight: .bold))
                         .foregroundColor(.black)
@@ -39,13 +43,15 @@ struct CustomAlert: View {
                         .padding(.top, 16)
                         .padding(.bottom, 8)
                         .padding(.horizontal, 16)
+                } else {
+                    Text("").frame(height: 15)
                 }
 
                 Text(alertType.message())
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
                     .font(.system(size: 14))
                     .foregroundColor(messageColor)
-                    .multilineTextAlignment(.center)
+                    .multilineTextAlignment(messageAlignment)
                     .padding(.horizontal, 16)
                     .padding(.bottom, 16)
                     .minimumScaleFactor(0.5)
@@ -90,11 +96,11 @@ struct CustomAlert: View {
 
             }
             .frame(
-                width: UIScreen.main.bounds.width * 0.45,
+                width: UIScreen.main.bounds.width * widthOffset,
                 height: alertType.height(isShowVerticalButtons: isShowVerticalButtons)
             )
             .background(Color.white)
-            .cornerRadius(20)
+            .cornerRadius(12)
             
         }
         

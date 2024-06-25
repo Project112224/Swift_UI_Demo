@@ -11,6 +11,7 @@ enum AlertType {
     
     case success
     case custom(title: String, message: String = "", leftActionText: String = "", rightActionText: String = "")
+    case paper(message: String = "", rightActionText: String = "")
     
     func title() -> String {
         switch self {
@@ -18,6 +19,8 @@ enum AlertType {
             return "Success"
         case .custom(title: let title, _, _, _):
             return title
+        case .paper(_, _):
+            return ""
         }
     }
 
@@ -26,6 +29,8 @@ enum AlertType {
         case .success:
             return "Please confirm that you're still open to session requests"
         case .custom(_, message: let message, _, _):
+            return message
+        case .paper(message: let message, _):
             return message
         }
     }
@@ -36,6 +41,8 @@ enum AlertType {
             return "Go"
         case .custom(_, _, leftActionText: let actionText, _):
             return actionText
+        case .paper(_, _):
+            return ""
         }
     }
     
@@ -45,6 +52,8 @@ enum AlertType {
             return "Cancel"
         case .custom(_, _, _, rightActionText: let actionText):
             return actionText
+        case .paper(_, rightActionText: let rightActionText):
+            return rightActionText
         }
     }
     
@@ -54,6 +63,8 @@ enum AlertType {
             return isShowVerticalButtons ? 220 : 150
         case .custom(_, _, _, _):
             return isShowVerticalButtons ? 220 : 150
+        case .paper(_, _):
+            return 220
         }
     }
 }

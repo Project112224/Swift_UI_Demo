@@ -16,7 +16,7 @@ extension LoginViewController {
         var showAlert: Bool = false
         var account: String = ""
         var password: String = ""
-        var alertMsg: String = ""
+        var alertMessage: String = ""
         var isLock: Bool = false
         
         func renderInputHeight(length: Double) -> Double {
@@ -44,10 +44,14 @@ extension LoginViewController {
             return nil
         }
         
-        func countErrorNumber(message: String) {
+        func renderError(message: String) {
+            self.countErrorNumber()
+            self.alertMessage = message
+        }
+        
+        private func countErrorNumber() {
             self.isLock = self.errorCount >= 4
             self.errorCount += 1
-            self.alertMsg = message
         }
     }
     

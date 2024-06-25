@@ -27,6 +27,7 @@ struct DateControlView: View {
             
             ZStack {
                 Text(dateFormat())
+                    .font(.system(size: 14))
                 DatePicker("", selection: $selectedDate, displayedComponents: [.date])
                     .environment(\.locale, Locale(identifier: "zh_Hant_TW"))
                     .labelsHidden()
@@ -36,7 +37,7 @@ struct DateControlView: View {
                     .onChange(of: self.selectedDate) {
                         print(self.selectedDate)
                     }
-            }
+            }.frame(width: 150)
             
             Button(action: {
                 self.selectedDate = Calendar.current.date(byAdding: .day, value: 1, to: self.selectedDate) ?? self.selectedDate

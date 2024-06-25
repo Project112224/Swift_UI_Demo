@@ -8,8 +8,7 @@
 import Foundation
 
 
-class APIConfig {
-    
+class APIService {
     
     static func getChart() -> ChartData? {
         guard let file = Bundle.main.path(forResource: "chart", ofType: "json")

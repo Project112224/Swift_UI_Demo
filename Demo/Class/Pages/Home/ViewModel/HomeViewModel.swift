@@ -18,23 +18,30 @@ extension HomeViewController {
         var buyData: [RateData]?
         var sellData: [RateData]?
         
+        var showAlert: Bool = false
+        var alertMessage: String?
         
-        func getIndicesDatas() {
-            let indicesDatas = APIConfig.getIndicesDatas()
+        
+        func fetchIndicesDatas() {
+            let indicesDatas = APIService.getIndicesDatas()
             self.indicesDatas = indicesDatas ?? []
         }
         
-        func getAppointments() {
-            let appointments = APIConfig.getAppointments()
+        func fetchAppointments() {
+            let appointments = APIService.getAppointments()
             self.appointments = appointments ?? []
         }
         
-        func getChart() {
-            let chartObj = APIConfig.getChart()
+        func fetchChart() {
+            let chartObj = APIService.getChart()
             self.buyData = chartObj?.buy
             self.sellData = chartObj?.selling
         }
         
+        func renderAlert(message: String) {
+            self.alertMessage = message
+            self.showAlert = true
+        }
     }
 
 }

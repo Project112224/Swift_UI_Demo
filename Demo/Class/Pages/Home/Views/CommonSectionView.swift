@@ -8,9 +8,12 @@
 import SwiftUI
 
 enum CommonSectionViewType {
-    case work //工作檢視
-    case indices //常用指數
-    case rate //匯率
+    /// 工作檢視
+    case work
+    /// 常用指數
+    case indices
+    /// 匯率
+    case rate
 }
 
 struct CommonSectionView: View {
@@ -32,22 +35,33 @@ struct CommonSectionView: View {
     
     @ViewBuilder
     private func buildWorkBody() -> some View {
-        HStack {
-            Text("工作檢視")
-                .font(.system(size: 18, weight: .bold))
-                .bold()
-                .foregroundColor(Colors.green700)
-            Spacer()
-            HStack {
-                DateControlView().frame(width: 202, height: 38)
+        VStack(alignment: .trailing) {
+            HStack(alignment: .center) {
+                Text("工作檢視")
+                    .font(.system(size: 18, weight: .bold))
+                    .bold()
+                    .foregroundColor(Colors.green700)
+                Spacer()
+                HStack {
+                    if (UIDevice.isIPad) {
+                        DateControlView()
+                            .frame(height: 38)
+                            .padding(.horizontal, 10)
+                    }
+                    SegmentControlView(action: { index in
+                        print("select index \(index)")
+                    })
+                }
+            }
+            .frame(alignment: .trailing)
+            .background(.white)
+
+            if (UIDevice.isIPhone) {
+                DateControlView()
+                    .frame(height: 38)
                     .padding(.horizontal, 10)
-                SegmentControlView(action: { index in
-                    print("select index \(index)")
-                })
             }
         }
-        .frame(alignment: .trailing)
-        .background(.white)
     }
     
     @ViewBuilder

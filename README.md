@@ -8,8 +8,6 @@
 - 數字
 - 8碼以上
 
-⚠️ 此專案版面專為 iPad 設計
-
 ## 頁面
 ### 登入頁
 <img src="https://github.com/Project112224/Swift_UI_Demo/blob/main/GitImage/Login.png" width="60%">

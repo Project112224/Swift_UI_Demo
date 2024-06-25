@@ -23,7 +23,7 @@ struct Header: View {
                 .foregroundColor(Color.gray)
             Spacer()
                 .frame(width: 10)
-            Text("行動輔銷平台")
+            Text("行動股市查詢平台")
                 .font(.system(size: 16, weight: .bold))
         }
     }

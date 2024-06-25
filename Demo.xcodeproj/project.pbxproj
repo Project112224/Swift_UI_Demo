@@ -19,6 +19,7 @@
 		F94ABB1B2B7DB3EF003D6466 /* AlertType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94ABB182B7DB3EF003D6466 /* AlertType.swift */; };
 		F94ABB1C2B7DB3EF003D6466 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94ABB192B7DB3EF003D6466 /* CustomAlert.swift */; };
 		F94ABB1D2B7DB3EF003D6466 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94ABB1A2B7DB3EF003D6466 /* Header.swift */; };
+		F960DDEA2C2A60C0005376A4 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960DDE92C2A60C0005376A4 /* UIDevice+Extension.swift */; };
 		F9A94A3A2B71B9080062F68A /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A94A392B71B9080062F68A /* DemoApp.swift */; };
 		F9A94A3E2B71B90A0062F68A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9A94A3D2B71B90A0062F68A /* Assets.xcassets */; };
 		F9A94A412B71B90A0062F68A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9A94A402B71B90A0062F68A /* Preview Assets.xcassets */; };
@@ -35,7 +36,7 @@
 		F9E1111D2B7E129400DE2E04 /* RateChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1111C2B7E129400DE2E04 /* RateChartView.swift */; };
 		F9E1111F2B7EEF9500DE2E04 /* DemoForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1111E2B7EEF9500DE2E04 /* DemoForm.swift */; };
 		F9E111242B7F3C0000DE2E04 /* chart.json in Resources */ = {isa = PBXBuildFile; fileRef = F9E111232B7F3C0000DE2E04 /* chart.json */; };
-		F9E111262B7F3C1600DE2E04 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E111252B7F3C1600DE2E04 /* APIConfig.swift */; };
+		F9E111262B7F3C1600DE2E04 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E111252B7F3C1600DE2E04 /* APIService.swift */; };
 		F9E1112A2B7F626800DE2E04 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E111292B7F626800DE2E04 /* TabbarViewController.swift */; };
 		F9E1112D2B7F62A300DE2E04 /* TabbarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1112C2B7F62A300DE2E04 /* TabbarItems.swift */; };
 		F9E111302B7F649B00DE2E04 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E1112F2B7F649B00DE2E04 /* EmptyView.swift */; };
@@ -76,6 +77,7 @@
 		F94ABB182B7DB3EF003D6466 /* AlertType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertType.swift; sourceTree = "<group>"; };
 		F94ABB192B7DB3EF003D6466 /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		F94ABB1A2B7DB3EF003D6466 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		F960DDE92C2A60C0005376A4 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIDevice+Extension.swift"; path = "Demo/Class/Pages/UIDevice+Extension.swift"; sourceTree = SOURCE_ROOT; };
 		F9A94A362B71B9080062F68A /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A94A392B71B9080062F68A /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
 		F9A94A3D2B71B90A0062F68A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,7 +96,7 @@
 		F9E1111C2B7E129400DE2E04 /* RateChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateChartView.swift; sourceTree = "<group>"; };
 		F9E1111E2B7EEF9500DE2E04 /* DemoForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoForm.swift; sourceTree = "<group>"; };
 		F9E111232B7F3C0000DE2E04 /* chart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chart.json; sourceTree = "<group>"; };
-		F9E111252B7F3C1600DE2E04 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
+		F9E111252B7F3C1600DE2E04 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		F9E111292B7F626800DE2E04 /* TabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		F9E1112C2B7F62A300DE2E04 /* TabbarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarItems.swift; sourceTree = "<group>"; };
 		F9E1112F2B7F649B00DE2E04 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
@@ -176,6 +178,14 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
+		F960DDE82C2A60A3005376A4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F960DDE92C2A60C0005376A4 /* UIDevice+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		F9A94A2D2B71B9080062F68A = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +246,7 @@
 		F9A94A572B71BA6B0062F68A /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				F960DDE82C2A60A3005376A4 /* Extension */,
 				F94ABB162B7DB3EF003D6466 /* Elements */,
 				F9A94A762B71C3510062F68A /* Style */,
 				F9A94A612B71BD610062F68A /* Router */,
@@ -349,7 +360,7 @@
 		F9E111212B7F3C0000DE2E04 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				F9E111252B7F3C1600DE2E04 /* APIConfig.swift */,
+				F9E111252B7F3C1600DE2E04 /* APIService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -533,11 +544,12 @@
 				F9EFD3592B7D9E6A00C8A99A /* LoginViewModel.swift in Sources */,
 				F9A94A7F2B71C8350062F68A /* ImageName.swift in Sources */,
 				F9E1111D2B7E129400DE2E04 /* RateChartView.swift in Sources */,
+				F960DDEA2C2A60C0005376A4 /* UIDevice+Extension.swift in Sources */,
 				F9E111412B808B4800DE2E04 /* ChartDataModel.swift in Sources */,
 				F94ABB1C2B7DB3EF003D6466 /* CustomAlert.swift in Sources */,
 				F9E111432B808B4800DE2E04 /* AppointmentModel.swift in Sources */,
 				BCDB75DF2B72099000EF5241 /* CommonSectionView.swift in Sources */,
-				F9E111262B7F3C1600DE2E04 /* APIConfig.swift in Sources */,
+				F9E111262B7F3C1600DE2E04 /* APIService.swift in Sources */,
 				F9A94A3A2B71B9080062F68A /* DemoApp.swift in Sources */,
 				F9A94A702B71BEC00062F68A /* CustomHeaderView.swift in Sources */,
 				F9A94A732B71C2A30062F68A /* RoundedImage.swift in Sources */,

@@ -9,13 +9,19 @@ import Foundation
 
 struct AppointmentModel: Identifiable, Decodable {
     let id: Int
+    /// 時間
     let time: String
+    /// 客戶
     let client: String
+    /// 類別
     let category: String
+    /// 地點
     let location: String
+    /// 視圖
     let view: String
+    /// 註記
     let note: String
-    let access: String
+    /// 互動紀錄
     let record: String
     
     var recordEnum: recordType {
@@ -36,7 +42,6 @@ struct AppointmentModel: Identifiable, Decodable {
         self.location = ""
         self.view = ""
         self.note = ""
-        self.access = ""
         self.record = ""
     }
     

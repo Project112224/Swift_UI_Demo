@@ -32,7 +32,7 @@ struct LoginViewController: View {
 
                 Header()
                     .position(CGPoint(
-                        x: geometry.size.width - 163.69,
+                        x: geometry.size.width - 103.69,
                         y: 12.0 + self.getStatusBarHeight()
                     ))
                     .onTapGesture {
@@ -94,12 +94,12 @@ struct LoginViewController: View {
                         presentAlert: $vm.showAlert,
                         alertType: .custom(
                             title: "",
-                            message: vm.alertMsg,
+                            message: vm.alertMessage,
                             rightActionText: "OK"
                         ),
                         messageColor: vm.isLock ? Color.red : Color.black,
                         rightButtonAction:  {
-                            vm.alertMsg = ""
+                            vm.alertMessage = ""
                         }
                     )
                 }
@@ -116,17 +116,16 @@ extension LoginViewController {
     }
     
     fileprivate func callAlert(message: String) {
-        vm.countErrorNumber(message: message)
+        vm.renderError(message: message)
         vm.showAlert.toggle()
     }
-}
-
-extension LoginViewController {
+    
 #if canImport(UIKit)
     func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 #endif
+
 }
 
 #Preview {

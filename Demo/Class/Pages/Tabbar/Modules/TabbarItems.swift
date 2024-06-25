@@ -13,9 +13,6 @@ enum TabbedItems: Int, CaseIterable{
     case trend
     case market
     case commodity
-    case link
-    case paperplus
-    case document
     
     var title: String{
         switch self {
@@ -29,12 +26,6 @@ enum TabbedItems: Int, CaseIterable{
             return "市場動態"
         case .commodity:
             return "商品資訊"
-        case .link:
-            return "常用網站"
-        case .paperplus:
-            return "新增約訪"
-        case .document:
-            return "新增待辦"
         }
     }
     
@@ -50,12 +41,6 @@ enum TabbedItems: Int, CaseIterable{
             return ImageName.iconMarket
         case .commodity:
             return ImageName.iconCommodity
-        case .link:
-            return ImageName.link
-        case .paperplus:
-            return ImageName.paperplus
-        case .document:
-            return ImageName.document
         }
     }
 }

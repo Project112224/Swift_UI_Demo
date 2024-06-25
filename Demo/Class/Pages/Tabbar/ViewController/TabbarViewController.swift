@@ -19,16 +19,15 @@ struct TabbarViewController: View {
             EmptyView().tag(2)
             EmptyView().tag(3)
             EmptyView().tag(4)
-            EmptyView().tag(5)
-            EmptyView().tag(6)
-            EmptyView().tag(7)
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle("", displayMode: .inline)
         .navigationBarItems(
-            leading: Header(),
-            trailing: Text("\(self.dateFormat()) 經理 王小明 您好").font(.system(size: 14))
+            leading: Header().padding(5),
+            trailing: Text("\(self.dateFormat()) 經理 王小明 您好")
+                .font(.system(size: 14))
+                .minimumScaleFactor(0.2)
         )
         .toolbarBackground(.visible, for: .navigationBar)
         .toolbarBackground(.white, for: .navigationBar)
