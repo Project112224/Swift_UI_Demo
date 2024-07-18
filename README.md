@@ -1,6 +1,8 @@
 ## SwiftUI Demo
 
-此專案採用 MVVM 架構，頁面只有 Login 與 Home 頁
+此專案採用 MVVM 架構<br />
+使用 SwiftUI 框架<br />
+頁面只有 Login 與 Home 頁
 
 帳號：1個大寫英文字 + 8位數字
 密碼：
